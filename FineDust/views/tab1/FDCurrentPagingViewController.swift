@@ -31,22 +31,17 @@ class FDCurrentPagingViewController: UIPageViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        topNavigationItem?.title = "현재"
+        topNavigationItem?.title = "now".localized
         
         if currentChildViewController?.childViewControllers == nil {
             setViewControllers([getChildVC(index: currentIndex)!], direction: .forward, animated: true, completion: nil)
         }
     }
     
-    @IBAction func sideMenuButtonPressed() {
-        //ViewControllerHelper.openSideMenu(vc: self)
-        ViewControllerHelper.openEditArea(vc: self)
+    @IBAction func shareButtonPressed() {
+        print("shareButtonPressed")
     }
-    
-    @IBAction func addAreaButtonPressed() {
-        ViewControllerHelper.openAddArea(vc: self)
-    }
-    
+
     private func getChildVC(index: Int) -> FDCurrentChildViewController? {
         if index == 0 {
             return FDCurrentChildViewController(index: 0, data: DataManager.shared.getCurrentAreaData() ?? FDData())

@@ -8,23 +8,13 @@
 
 import Foundation
 
-// MARK: - Localize
-protocol Localize {
-    var localized: String { get }
-}
+extension String {
 
-extension String: Localize {
     var localized: String {
-        return self.localizedWithComment(comment: "")
-    }
-    
-    func localizedWithComment(comment: String) -> String {
         var result = Bundle.main.localizedString(forKey: self, value: nil, table: nil)
-        
         if result == self {
-            result = Bundle.main.localizedString(forKey: self, value: nil, table: "Localizable_dev")
+            result = "#" + result
         }
-        
         return result
     }
 }

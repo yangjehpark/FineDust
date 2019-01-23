@@ -10,4 +10,9 @@ import UIKit
 
 class FDTabBarViewController: UITabBarController {
     
+    static let shared = FDTabBarViewController()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
 }

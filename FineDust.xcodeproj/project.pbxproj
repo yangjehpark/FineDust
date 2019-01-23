@@ -23,10 +23,6 @@
 		0402C6DF2099B2E300CE232B /* FDNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0402C6DE2099B2E300CE232B /* FDNavigationController.swift */; };
 		0402C6E02099B32000CE232B /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0402C6D92099B0B800CE232B /* Log.swift */; };
 		0402C6E12099B32000CE232B /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0402C6DA2099B0B800CE232B /* Utils.swift */; };
-		04048BB220AA791300BD525A /* FDForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04048BB120AA791300BD525A /* FDForecastCell.swift */; };
-		04048BB420AA792100BD525A /* FDForecastCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04048BB320AA792100BD525A /* FDForecastCell.xib */; };
-		04048BB620AA796A00BD525A /* FDForecastSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04048BB520AA796A00BD525A /* FDForecastSectionHeaderView.swift */; };
-		04048BB820AA797800BD525A /* FDForecastSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04048BB720AA797800BD525A /* FDForecastSectionHeaderView.xib */; };
 		04048BBA20AA79AE00BD525A /* FDCurrentADCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04048BB920AA79AE00BD525A /* FDCurrentADCell.swift */; };
 		04048BBC20AA79BC00BD525A /* FDCurrentADCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04048BBB20AA79BC00BD525A /* FDCurrentADCell.xib */; };
 		04048BBF20AABE3E00BD525A /* FDAddAreaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04048BBE20AABE3E00BD525A /* FDAddAreaViewController.swift */; };
@@ -55,6 +51,9 @@
 		0426987220A58CB8001735F5 /* FDCurrentInfomationHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0426987120A58CB8001735F5 /* FDCurrentInfomationHeader.swift */; };
 		0426987420A58CC1001735F5 /* FDCurrentInfomationHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0426987320A58CC1001735F5 /* FDCurrentInfomationHeader.xib */; };
 		0426987620A5AF98001735F5 /* FDCurrentStateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0426987520A5AF98001735F5 /* FDCurrentStateCell.xib */; };
+		0439648A21F742C800CAED52 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0439648C21F742C800CAED52 /* Localizable.strings */; };
+		0439648F21F74D5A00CAED52 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0439648E21F74D5A00CAED52 /* Array.swift */; };
+		0439649121F761F400CAED52 /* VerticalStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0439649021F761F400CAED52 /* VerticalStepper.swift */; };
 		0448008B20C901FC005E1D68 /* FDAddAreaSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448008A20C901FC005E1D68 /* FDAddAreaSearchCell.swift */; };
 		0448008D20C90212005E1D68 /* FDAddAreaSearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0448008C20C90212005E1D68 /* FDAddAreaSearchCell.xib */; };
 		0448009020C913D2005E1D68 /* FDEditAreaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448008F20C913D2005E1D68 /* FDEditAreaViewController.swift */; };
@@ -65,10 +64,7 @@
 		0448D12620BAAEE20030FA2D /* KakaoResponseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448D12520BAAEE20030FA2D /* KakaoResponseModels.swift */; };
 		0472C96520A2D53600D7E5A1 /* UserAreaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0472C96420A2D53600D7E5A1 /* UserAreaManager.swift */; };
 		04932B1F20A5B970006E5907 /* AirQualityStandards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04932B1E20A5B970006E5907 /* AirQualityStandards.swift */; };
-		04B98CD220A98A030004E306 /* FDForecastChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B98CD120A98A030004E306 /* FDForecastChildViewController.swift */; };
-		04B98CD420A98A130004E306 /* FDForecastChildView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04B98CD320A98A130004E306 /* FDForecastChildView.xib */; };
 		04BBF38020A9287F00385C5E /* PRTMCoordTrans.h in Sources */ = {isa = PBXBuildFile; fileRef = 04BBF37F20A9285B00385C5E /* PRTMCoordTrans.h */; };
-		04BBF38A20A9840000385C5E /* FDForecastPagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BBF38920A9840000385C5E /* FDForecastPagingViewController.swift */; };
 		04C072B9209AB61C007F7017 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C072B8209AB61C007F7017 /* Constants.swift */; };
 		04C072BB209AB66D007F7017 /* AQIAPIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C072BA209AB66D007F7017 /* AQIAPIs.swift */; };
 		04C072C5209AB9B9007F7017 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C072BD209AB9B8007F7017 /* UIButton.swift */; };
@@ -137,10 +133,6 @@
 		0402C6DA2099B0B800CE232B /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		0402C6DB2099B0E200CE232B /* ViewUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUtils.swift; sourceTree = "<group>"; };
 		0402C6DE2099B2E300CE232B /* FDNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDNavigationController.swift; sourceTree = "<group>"; };
-		04048BB120AA791300BD525A /* FDForecastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDForecastCell.swift; sourceTree = "<group>"; };
-		04048BB320AA792100BD525A /* FDForecastCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FDForecastCell.xib; sourceTree = "<group>"; };
-		04048BB520AA796A00BD525A /* FDForecastSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDForecastSectionHeaderView.swift; sourceTree = "<group>"; };
-		04048BB720AA797800BD525A /* FDForecastSectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FDForecastSectionHeaderView.xib; sourceTree = "<group>"; };
 		04048BB920AA79AE00BD525A /* FDCurrentADCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDCurrentADCell.swift; sourceTree = "<group>"; };
 		04048BBB20AA79BC00BD525A /* FDCurrentADCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FDCurrentADCell.xib; sourceTree = "<group>"; };
 		04048BBE20AABE3E00BD525A /* FDAddAreaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDAddAreaViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +161,10 @@
 		0426987120A58CB8001735F5 /* FDCurrentInfomationHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDCurrentInfomationHeader.swift; sourceTree = "<group>"; };
 		0426987320A58CC1001735F5 /* FDCurrentInfomationHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FDCurrentInfomationHeader.xib; sourceTree = "<group>"; };
 		0426987520A5AF98001735F5 /* FDCurrentStateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FDCurrentStateCell.xib; sourceTree = "<group>"; };
+		0439648B21F742C800CAED52 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0439648D21F742E600CAED52 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0439648E21F74D5A00CAED52 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		0439649021F761F400CAED52 /* VerticalStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalStepper.swift; sourceTree = "<group>"; };
 		0448008A20C901FC005E1D68 /* FDAddAreaSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDAddAreaSearchCell.swift; sourceTree = "<group>"; };
 		0448008C20C90212005E1D68 /* FDAddAreaSearchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FDAddAreaSearchCell.xib; sourceTree = "<group>"; };
 		0448008F20C913D2005E1D68 /* FDEditAreaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDEditAreaViewController.swift; sourceTree = "<group>"; };
@@ -187,12 +183,9 @@
 		045B2D2A21C88E9C00BAA4B7 /* NotiEx.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NotiEx.entitlements; sourceTree = "<group>"; };
 		0472C96420A2D53600D7E5A1 /* UserAreaManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAreaManager.swift; sourceTree = "<group>"; };
 		04932B1E20A5B970006E5907 /* AirQualityStandards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityStandards.swift; sourceTree = "<group>"; };
-		04B98CD120A98A030004E306 /* FDForecastChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDForecastChildViewController.swift; sourceTree = "<group>"; };
-		04B98CD320A98A130004E306 /* FDForecastChildView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FDForecastChildView.xib; sourceTree = "<group>"; };
 		04BBF37B20A9271800385C5E /* libProj4.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libProj4.a; path = FineDust/utils/PRTMCoordTrans/libProj4.a; sourceTree = "<group>"; };
 		04BBF37F20A9285B00385C5E /* PRTMCoordTrans.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRTMCoordTrans.h; sourceTree = "<group>"; };
 		04BBF38120A928ED00385C5E /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
-		04BBF38920A9840000385C5E /* FDForecastPagingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDForecastPagingViewController.swift; sourceTree = "<group>"; };
 		04C072B8209AB61C007F7017 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		04C072BA209AB66D007F7017 /* AQIAPIs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AQIAPIs.swift; sourceTree = "<group>"; };
 		04C072BD209AB9B8007F7017 /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
@@ -271,6 +264,7 @@
 				0402C6D82099B03000CE232B /* utils */,
 				04C072BC209AB99A007F7017 /* extensions */,
 				0402C6A52099A56200CE232B /* Assets.xcassets */,
+				0439648C21F742C800CAED52 /* Localizable.strings */,
 			);
 			path = FineDust;
 			sourceTree = "<group>";
@@ -294,8 +288,7 @@
 				0402C6D52099AFCE00CE232B /* drawer */,
 				04048BBD20AABE2700BD525A /* modal */,
 				0402C6E22099B55000CE232B /* tab1 */,
-				0402C6E32099B55800CE232B /* tab2 */,
-				04CC317320A19F82009D5471 /* tab3 */,
+				04CC317320A19F82009D5471 /* tab2 */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -345,6 +338,7 @@
 				04C072D4209BF8E6007F7017 /* JSONable.swift */,
 				0402C6DB2099B0E200CE232B /* ViewUtils.swift */,
 				04932B1E20A5B970006E5907 /* AirQualityStandards.swift */,
+				0439649021F761F400CAED52 /* VerticalStepper.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -367,15 +361,6 @@
 				0426985120A551F5001735F5 /* children */,
 			);
 			path = tab1;
-			sourceTree = "<group>";
-		};
-		0402C6E32099B55800CE232B /* tab2 */ = {
-			isa = PBXGroup;
-			children = (
-				04BBF38920A9840000385C5E /* FDForecastPagingViewController.swift */,
-				04B98CD020A989E00004E306 /* children */,
-			);
-			path = tab2;
 			sourceTree = "<group>";
 		};
 		04048BBD20AABE2700BD525A /* modal */ = {
@@ -489,35 +474,6 @@
 			path = NotiEx;
 			sourceTree = "<group>";
 		};
-		04B98CD020A989E00004E306 /* children */ = {
-			isa = PBXGroup;
-			children = (
-				04B98CD120A98A030004E306 /* FDForecastChildViewController.swift */,
-				04B98CD320A98A130004E306 /* FDForecastChildView.xib */,
-				04B98CD520A98C2A0004E306 /* headers */,
-				04B98CD620A98C310004E306 /* cells */,
-			);
-			path = children;
-			sourceTree = "<group>";
-		};
-		04B98CD520A98C2A0004E306 /* headers */ = {
-			isa = PBXGroup;
-			children = (
-				04048BB520AA796A00BD525A /* FDForecastSectionHeaderView.swift */,
-				04048BB720AA797800BD525A /* FDForecastSectionHeaderView.xib */,
-			);
-			path = headers;
-			sourceTree = "<group>";
-		};
-		04B98CD620A98C310004E306 /* cells */ = {
-			isa = PBXGroup;
-			children = (
-				04048BB120AA791300BD525A /* FDForecastCell.swift */,
-				04048BB320AA792100BD525A /* FDForecastCell.xib */,
-			);
-			path = cells;
-			sourceTree = "<group>";
-		};
 		04BBF38220A929CF00385C5E /* PRTMCoordTrans */ = {
 			isa = PBXGroup;
 			children = (
@@ -532,6 +488,7 @@
 			isa = PBXGroup;
 			children = (
 				04C072C0209AB9B8007F7017 /* Collection.swift */,
+				0439648E21F74D5A00CAED52 /* Array.swift */,
 				04C072BE209AB9B8007F7017 /* NSObject.swift */,
 				04C072C2209AB9B8007F7017 /* String.swift */,
 				04C072C3209AB9B8007F7017 /* UIBarButtonItem.swift */,
@@ -555,11 +512,12 @@
 			path = AQI;
 			sourceTree = "<group>";
 		};
-		04CC317320A19F82009D5471 /* tab3 */ = {
+		04CC317320A19F82009D5471 /* tab2 */ = {
 			isa = PBXGroup;
 			children = (
 				0402C6A02099A56200CE232B /* FDMapViewController.swift */,
 			);
+			name = tab2;
 			path = tab3;
 			sourceTree = "<group>";
 		};
@@ -668,6 +626,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = 0402C6902099A56200CE232B;
 			productRefGroup = 0402C69A2099A56200CE232B /* Products */;
@@ -690,6 +649,7 @@
 				0402C6A92099A56200CE232B /* LaunchScreen.storyboard in Resources */,
 				0426986920A5886D001735F5 /* FDCurrentOtherStateCollectionCell.xib in Resources */,
 				0426986020A572B2001735F5 /* FDCurrentOtherStateCell.xib in Resources */,
+				0439648A21F742C800CAED52 /* Localizable.strings in Resources */,
 				0426985720A5698B001735F5 /* FDCurrentChildView.xib in Resources */,
 				04048BC120AABE5F00BD525A /* FDAddAreaView.xib in Resources */,
 				0448008D20C90212005E1D68 /* FDAddAreaSearchCell.xib in Resources */,
@@ -697,10 +657,7 @@
 				0426986420A573E3001735F5 /* FDCurrentInfomationCell.xib in Resources */,
 				0402C6A62099A56200CE232B /* Assets.xcassets in Resources */,
 				0448009620C91624005E1D68 /* FDEditAreaCell.xib in Resources */,
-				04048BB420AA792100BD525A /* FDForecastCell.xib in Resources */,
-				04048BB820AA797800BD525A /* FDForecastSectionHeaderView.xib in Resources */,
 				0402C6A42099A56200CE232B /* Main.storyboard in Resources */,
-				04B98CD420A98A130004E306 /* FDForecastChildView.xib in Resources */,
 				0448009220C913FB005E1D68 /* FDEditAreaView.xib in Resources */,
 				04048BC520AAC3EC00BD525A /* FDCurrentStandardColorHeader.xib in Resources */,
 				0426987020A58C83001735F5 /* FDCurrentOtherStateHeader.xib in Resources */,
@@ -809,17 +766,15 @@
 				04C072D5209BF8E6007F7017 /* JSONable.swift in Sources */,
 				04C3A0C920A19966000D3583 /* FDMenuViewController.swift in Sources */,
 				0426985320A5611E001735F5 /* FDCurrentPagingViewController.swift in Sources */,
-				04048BB220AA791300BD525A /* FDForecastCell.swift in Sources */,
 				0402C6E12099B32000CE232B /* Utils.swift in Sources */,
 				0402C6A12099A56200CE232B /* FDMapViewController.swift in Sources */,
 				0426986E20A58C77001735F5 /* FDCurrentOtherStateHeader.swift in Sources */,
 				0402C6C82099AB1300CE232B /* FDViewController.swift in Sources */,
-				04048BB620AA796A00BD525A /* FDForecastSectionHeaderView.swift in Sources */,
 				04C072CA209AB9B9007F7017 /* String.swift in Sources */,
 				04C072C9209AB9B9007F7017 /* UIViewController.swift in Sources */,
 				0402C6DC2099B0E200CE232B /* ViewUtils.swift in Sources */,
-				04BBF38A20A9840000385C5E /* FDForecastPagingViewController.swift in Sources */,
 				04048BC820AACE7300BD525A /* AKAPIs.swift in Sources */,
+				0439649121F761F400CAED52 /* VerticalStepper.swift in Sources */,
 				04048BCA20AAD48500BD525A /* AKResponseModels.swift in Sources */,
 				04048BCE20AD305500BD525A /* DataManager.swift in Sources */,
 				04C072C8209AB9B9007F7017 /* Collection.swift in Sources */,
@@ -833,6 +788,7 @@
 				0402C6C62099AAD700CE232B /* FDRootViewController.swift in Sources */,
 				04048BD320AD719300BD525A /* Double.swift in Sources */,
 				0402C6C22099AA6000CE232B /* APIs.swift in Sources */,
+				0439648F21F74D5A00CAED52 /* Array.swift in Sources */,
 				04C072D3209B08B1007F7017 /* AQIRequestParameters.swift in Sources */,
 				04C072BB209AB66D007F7017 /* AQIAPIs.swift in Sources */,
 				04048BBA20AA79AE00BD525A /* FDCurrentADCell.swift in Sources */,
@@ -842,7 +798,6 @@
 				0448008B20C901FC005E1D68 /* FDAddAreaSearchCell.swift in Sources */,
 				0448009020C913D2005E1D68 /* FDEditAreaViewController.swift in Sources */,
 				0426985E20A572AA001735F5 /* FDCurrentOtherStateCell.swift in Sources */,
-				04B98CD220A98A030004E306 /* FDForecastChildViewController.swift in Sources */,
 				04048BC320AAC3E000BD525A /* FDCurrentStandardColorHeader.swift in Sources */,
 				0402C6CA2099AB5000CE232B /* InitViewController.swift in Sources */,
 				0402C6CC2099AE2600CE232B /* ViewControllerHelper.swift in Sources */,
@@ -894,6 +849,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		0439648C21F742C800CAED52 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0439648B21F742C800CAED52 /* en */,
+				0439648D21F742E600CAED52 /* ko */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -901,6 +865,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -958,6 +923,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

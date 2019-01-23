@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  FineDust
+
+  Created by YangJehPark on 22/01/2019.
+  Copyright © 2019 YangJehPark. All rights reserved.
+*/
+
+"ok" = "OK";
+"forecase" = "Forecast";
+"now" = "Now";
+"satellite" = "Satellite";
