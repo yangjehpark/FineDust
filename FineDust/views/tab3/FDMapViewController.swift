@@ -18,12 +18,13 @@ class FDMapViewController: UIViewController {
     @IBOutlet weak var verticalStepper: VerticalStepper!
     private var webLoadProgress: Double = 0 {
         didSet {
-            UIView.animate(withDuration: 0.1) {
+            UIView.animate(withDuration: 0.1, animations: {
                 self.progressView.alpha = CGFloat(1-self.webLoadProgress)
-            }
-            if webLoadProgress == 1 {
-                loadComplete()
-            }
+            }, completion: { (complete) in
+                if self.webLoadProgress == 1 {
+                    self.loadComplete()
+                }
+            })
         }
     }
     private var indicator: NVActivityIndicatorView?
