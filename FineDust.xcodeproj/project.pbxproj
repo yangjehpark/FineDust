@@ -36,9 +36,7 @@
 		04048BD120AD6DCE00BD525A /* KakaoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04048BD020AD6DCE00BD525A /* KakaoAPI.swift */; };
 		04048BD320AD719300BD525A /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04048BD220AD719300BD525A /* Double.swift */; };
 		0426984E20A538B9001735F5 /* FDCurrentStateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0426984D20A538B9001735F5 /* FDCurrentStateCell.swift */; };
-		0426985320A5611E001735F5 /* FDCurrentPagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0426985220A5611E001735F5 /* FDCurrentPagingViewController.swift */; };
-		0426985520A5659E001735F5 /* FDCurrentChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0426985420A5659E001735F5 /* FDCurrentChildViewController.swift */; };
-		0426985720A5698B001735F5 /* FDCurrentChildView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0426985620A5698B001735F5 /* FDCurrentChildView.xib */; };
+		0426985520A5659E001735F5 /* FDCurrentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0426985420A5659E001735F5 /* FDCurrentViewController.swift */; };
 		0426985E20A572AA001735F5 /* FDCurrentOtherStateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0426985D20A572AA001735F5 /* FDCurrentOtherStateCell.swift */; };
 		0426986020A572B2001735F5 /* FDCurrentOtherStateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0426985F20A572B2001735F5 /* FDCurrentOtherStateCell.xib */; };
 		0426986220A573D5001735F5 /* FDCurrentInfomationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0426986120A573D5001735F5 /* FDCurrentInfomationCell.swift */; };
@@ -146,9 +144,7 @@
 		04048BD020AD6DCE00BD525A /* KakaoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAPI.swift; sourceTree = "<group>"; };
 		04048BD220AD719300BD525A /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		0426984D20A538B9001735F5 /* FDCurrentStateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDCurrentStateCell.swift; sourceTree = "<group>"; };
-		0426985220A5611E001735F5 /* FDCurrentPagingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDCurrentPagingViewController.swift; sourceTree = "<group>"; };
-		0426985420A5659E001735F5 /* FDCurrentChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDCurrentChildViewController.swift; sourceTree = "<group>"; };
-		0426985620A5698B001735F5 /* FDCurrentChildView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FDCurrentChildView.xib; sourceTree = "<group>"; };
+		0426985420A5659E001735F5 /* FDCurrentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDCurrentViewController.swift; sourceTree = "<group>"; };
 		0426985D20A572AA001735F5 /* FDCurrentOtherStateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDCurrentOtherStateCell.swift; sourceTree = "<group>"; };
 		0426985F20A572B2001735F5 /* FDCurrentOtherStateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FDCurrentOtherStateCell.xib; sourceTree = "<group>"; };
 		0426986120A573D5001735F5 /* FDCurrentInfomationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDCurrentInfomationCell.swift; sourceTree = "<group>"; };
@@ -357,8 +353,9 @@
 		0402C6E22099B55000CE232B /* tab1 */ = {
 			isa = PBXGroup;
 			children = (
-				0426985220A5611E001735F5 /* FDCurrentPagingViewController.swift */,
-				0426985120A551F5001735F5 /* children */,
+				0426985420A5659E001735F5 /* FDCurrentViewController.swift */,
+				0426986C20A58C66001735F5 /* headers */,
+				0426985820A570B5001735F5 /* cells */,
 			);
 			path = tab1;
 			sourceTree = "<group>";
@@ -390,17 +387,6 @@
 				0448D12520BAAEE20030FA2D /* KakaoResponseModels.swift */,
 			);
 			path = Kakao;
-			sourceTree = "<group>";
-		};
-		0426985120A551F5001735F5 /* children */ = {
-			isa = PBXGroup;
-			children = (
-				0426985420A5659E001735F5 /* FDCurrentChildViewController.swift */,
-				0426985620A5698B001735F5 /* FDCurrentChildView.xib */,
-				0426986C20A58C66001735F5 /* headers */,
-				0426985820A570B5001735F5 /* cells */,
-			);
-			path = children;
 			sourceTree = "<group>";
 		};
 		0426985820A570B5001735F5 /* cells */ = {
@@ -650,7 +636,6 @@
 				0426986920A5886D001735F5 /* FDCurrentOtherStateCollectionCell.xib in Resources */,
 				0426986020A572B2001735F5 /* FDCurrentOtherStateCell.xib in Resources */,
 				0439648A21F742C800CAED52 /* Localizable.strings in Resources */,
-				0426985720A5698B001735F5 /* FDCurrentChildView.xib in Resources */,
 				04048BC120AABE5F00BD525A /* FDAddAreaView.xib in Resources */,
 				0448008D20C90212005E1D68 /* FDAddAreaSearchCell.xib in Resources */,
 				04048BBC20AA79BC00BD525A /* FDCurrentADCell.xib in Resources */,
@@ -765,7 +750,6 @@
 				04C072B9209AB61C007F7017 /* Constants.swift in Sources */,
 				04C072D5209BF8E6007F7017 /* JSONable.swift in Sources */,
 				04C3A0C920A19966000D3583 /* FDMenuViewController.swift in Sources */,
-				0426985320A5611E001735F5 /* FDCurrentPagingViewController.swift in Sources */,
 				0402C6E12099B32000CE232B /* Utils.swift in Sources */,
 				0402C6A12099A56200CE232B /* FDMapViewController.swift in Sources */,
 				0426986E20A58C77001735F5 /* FDCurrentOtherStateHeader.swift in Sources */,
@@ -784,7 +768,7 @@
 				0402C69D2099A56200CE232B /* AppDelegate.swift in Sources */,
 				04CC317220A19CFE009D5471 /* FDMenuNavigationViewController.swift in Sources */,
 				0472C96520A2D53600D7E5A1 /* UserAreaManager.swift in Sources */,
-				0426985520A5659E001735F5 /* FDCurrentChildViewController.swift in Sources */,
+				0426985520A5659E001735F5 /* FDCurrentViewController.swift in Sources */,
 				0402C6C62099AAD700CE232B /* FDRootViewController.swift in Sources */,
 				04048BD320AD719300BD525A /* Double.swift in Sources */,
 				0402C6C22099AA6000CE232B /* APIs.swift in Sources */,

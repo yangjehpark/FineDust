@@ -23,53 +23,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qH2-gz-RMB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-807" y="-349"/>
-        </scene>
-        <!--Current View Controller-->
-        <scene sceneID="hNz-n2-bh7">
-            <objects>
-                <viewController storyboardIdentifier="FDCurrentViewController" id="9pv-A4-QxB" customClass="FDCurrentViewController" customModule="FineDust" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dDF-TE-l7L">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <items>
-                                    <navigationItem title="Title" id="Cen-D0-JYe">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="GEH-CV-MtU">
-                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <connections>
-                                                <action selector="sideMenuButtonPressed" destination="9pv-A4-QxB" id="TOf-07-yNr"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="xIS-Kp-wsX">
-                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <connections>
-                                                <action selector="addAreaButtonPressed" destination="9pv-A4-QxB" id="S1i-xu-1HR"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="dDF-TE-l7L" firstAttribute="trailing" secondItem="PQr-Ze-W5v" secondAttribute="trailing" id="4xO-UZ-uU6"/>
-                            <constraint firstItem="dDF-TE-l7L" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="DGQ-Ku-vQ2"/>
-                            <constraint firstItem="dDF-TE-l7L" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" id="otz-fk-BNe"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" systemItem="recents" id="acW-dT-cKf"/>
-                    <connections>
-                        <outlet property="navigationBar" destination="dDF-TE-l7L" id="3dG-rc-vXX"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="49" y="-710"/>
+            <point key="canvasLocation" x="-1145" y="330"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="n1M-od-VFb">
@@ -81,32 +35,48 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="mij-LF-cnp" kind="relationship" relationship="rootViewController" id="ha6-hv-h2a"/>
+                        <segue destination="dIE-86-fJ9" kind="relationship" relationship="rootViewController" id="Pdv-xa-gWA"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1KX-nh-ZRb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="-340"/>
+            <point key="canvasLocation" x="750" y="321"/>
         </scene>
-        <!--Title-->
-        <scene sceneID="ts9-xa-Yya">
+        <!--Current View Controller-->
+        <scene sceneID="EYl-DW-Str">
             <objects>
-                <pageViewController storyboardIdentifier="FDCurrentPagingViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="mij-LF-cnp" customClass="FDCurrentPagingViewController" customModule="FineDust" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" title="Title" id="IJR-FC-cEZ">
-                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="6Eq-WL-vbF">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <connections>
-                                <action selector="shareButtonPressed" destination="mij-LF-cnp" id="5iJ-K7-c6f"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                <viewController storyboardIdentifier="FDCurrentViewController" id="dIE-86-fJ9" customClass="FDCurrentViewController" customModule="FineDust" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="E0H-1I-RDG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="583"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4Ok-Tq-uIX">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="534"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="dIE-86-fJ9" id="Ny6-g8-8Jt"/>
+                                    <outlet property="delegate" destination="dIE-86-fJ9" id="8b3-u7-Xsa"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="oEO-hz-yFk" firstAttribute="bottom" secondItem="4Ok-Tq-uIX" secondAttribute="bottom" id="4v2-93-3Qm"/>
+                            <constraint firstItem="4Ok-Tq-uIX" firstAttribute="leading" secondItem="oEO-hz-yFk" secondAttribute="leading" id="Of7-sj-XUB"/>
+                            <constraint firstItem="4Ok-Tq-uIX" firstAttribute="top" secondItem="oEO-hz-yFk" secondAttribute="top" id="Wc7-Aw-p0d"/>
+                            <constraint firstItem="oEO-hz-yFk" firstAttribute="trailing" secondItem="4Ok-Tq-uIX" secondAttribute="trailing" id="c5J-jT-1wZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="oEO-hz-yFk"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="QpP-pH-IDh"/>
                     <connections>
-                        <outlet property="topNavigationItem" destination="IJR-FC-cEZ" id="TSs-c3-du5"/>
+                        <outlet property="mainTableView" destination="4Ok-Tq-uIX" id="uWR-nX-ztt"/>
+                        <outlet property="topNavigationItem" destination="QpP-pH-IDh" id="ViW-96-Oq1"/>
                     </connections>
-                </pageViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="35V-Vq-t8z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hSP-jm-h6c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1564" y="-340"/>
+            <point key="canvasLocation" x="1548" y="321"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="8IN-yZ-BW7">

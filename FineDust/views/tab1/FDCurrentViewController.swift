@@ -1,5 +1,5 @@
 //
-//  FDCurrentChildViewController.swift
+//  FDCurrentViewController.swift
 //  FineDust
 //
 //  Created by YangJehPark on 2018. 5. 11..
@@ -8,9 +8,10 @@
 
 import UIKit
 
-class FDCurrentChildViewController: UIViewController {
+class FDCurrentViewController: UIViewController {
     
-    var pageIndex = 0
+    @IBOutlet weak var topNavigationItem: UINavigationItem?
+
     var data: FDData? {
         didSet {
             self.dataChanged()
@@ -19,25 +20,22 @@ class FDCurrentChildViewController: UIViewController {
     
     @IBOutlet weak var mainTableView: UITableView!
     
-    convenience init(index: Int, data:FDData?) {
-        self.init()
-        self.pageIndex = index
-        self.data = data
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         mainTableView.dataSource = self
         mainTableView.delegate = self
-        let cellTypes = [FDCurrentStateCell.self, FDCurrentOtherStateCell.self, FDCurrentInfomationCell.self]
-        mainTableView.fdRegisterCells(cellTypes)
         let headerTypes = [FDCurrentStandardColorHeader.self, FDCurrentOtherStateHeader.self, FDCurrentInfomationHeader.self]
+        let cellTypes = [FDCurrentStateCell.self, FDCurrentOtherStateCell.self, FDCurrentInfomationCell.self]
         mainTableView.fdRegisterHeaderFooterViews(headerTypes)
+        mainTableView.fdRegisterCells(cellTypes)
+        
+        data = DataManager.shared.getCurrentAreaData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        topNavigationItem?.title = "now".localized
         mainTableView.backgroundColor = AQIStandards.getLevelBackgroundColor(AQIStandards.getLevel(data?.mainIndex))
     }
     
@@ -59,7 +57,7 @@ class FDCurrentChildViewController: UIViewController {
     }
 }
 
-extension FDCurrentChildViewController: UITableViewDelegate, UITableViewDataSource {
+extension FDCurrentViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return Section.totalCount()
@@ -76,19 +74,16 @@ extension FDCurrentChildViewController: UITableViewDelegate, UITableViewDataSour
                 cell.setup(data: data)
                 return cell
             }
-            break
         case Section.CurrentOtherState.rawValue:
             if let cell = tableView.fdDequeueCell(FDCurrentOtherStateCell.self, indexPath) {
                 cell.setup(data: data)
                 return cell
             }
-            break
         case Section.CurrentInfomation.rawValue:
             if let cell = tableView.fdDequeueCell(FDCurrentInfomationCell.self, indexPath) {
                 cell.setup(data: data)
                 return cell
             }
-            break
         default:
             break
         }

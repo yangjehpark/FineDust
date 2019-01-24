@@ -23,5 +23,3 @@ class FDCurrentStandardColorHeader: UITableViewHeaderFooterView {
         }
     }
 }
-
-

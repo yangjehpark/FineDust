@@ -21,6 +21,7 @@ class FDCurrentStateCell: FDCurrentCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        locationLabel?.numberOfLines = 0
     }
     
     override func setup(data: FDData?) {        

@@ -12,4 +12,3 @@ class FDCurrentOtherStateHeader: UITableViewHeaderFooterView {
  
     static let defaultHeight: CGFloat = 50
 }
-
