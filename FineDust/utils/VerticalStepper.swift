@@ -125,12 +125,10 @@ enum VerticalStepperComponents: Int {
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         var touchedNow: VerticalStepperComponents?
         let loc = touch.location(in: self)
-        if plus.frame.contains(loc) {
+        if plus.bounds.contains(loc) {
             touchedNow = .plus
-            print("begin clicked plus")
         } else if minus.frame.contains(loc){
             touchedNow = .minus
-            print("begin clicked minus")
         }
         
         let result = highlightAsNeeded(touchedNow: touchedNow)
@@ -141,17 +139,14 @@ enum VerticalStepperComponents: Int {
         var touchedNow: VerticalStepperComponents?
         let loc = touch.location(in: self)
         if !self.bounds.contains(loc){
-            print("touch outside")
             self.deHighlightAsNeeded()
             return false
         }
         
-        if plus.frame.contains(loc) {
+        if plus.bounds.contains(loc) {
             touchedNow = .plus
-            print("continue clicked plus")
         } else if minus.frame.contains(loc){
             touchedNow = .minus
-            print("continue clicked minus")
         }
         let result = highlightAsNeeded(touchedNow: touchedNow)
         return result
@@ -159,7 +154,6 @@ enum VerticalStepperComponents: Int {
     
     override func cancelTracking(with event: UIEvent?) {
         self.deHighlightAsNeeded()
-        print("cancel tracking")
     }
     
     override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
@@ -167,12 +161,10 @@ enum VerticalStepperComponents: Int {
         
         if let touch = touch {
             let loc = touch.location(in: self)
-            if plus.frame.contains(loc) {
+            if plus.bounds.contains(loc) {
                 touchedNow = .plus
-                print("end clicked plus")
             } else if minus.frame.contains(loc){
                 touchedNow = .minus
-                print("end clicked minus")
             }
         }
         
