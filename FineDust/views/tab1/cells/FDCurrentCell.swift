@@ -12,6 +12,7 @@ class FDCurrentCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        selectionStyle = .none
     }
     
     func setup(data: FDData?) {

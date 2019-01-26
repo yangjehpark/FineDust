@@ -44,10 +44,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let token = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
         print("apns token = \(token)")
     }
-
-//    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-//        print("\(userInfo)")
-//    }
 }
 
 extension AppDelegate: UNUserNotificationCenterDelegate {

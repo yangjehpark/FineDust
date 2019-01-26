@@ -13,7 +13,7 @@ class FDCurrentStateCell: FDCurrentCell {
     static let defaultHeight: CGFloat = UITableViewAutomaticDimension
     
     @IBOutlet weak var locationLabel: UILabel?
-    @IBOutlet weak var stateImageView: UIImageView?
+    @IBOutlet weak var stateEmojiLabel: UILabel?
     @IBOutlet weak var stateDescriptionLabel: UILabel?
     @IBOutlet weak var stateAdviceLabel: UILabel?
     @IBOutlet weak var stateIndexLabel: UILabel?
@@ -22,12 +22,13 @@ class FDCurrentStateCell: FDCurrentCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         locationLabel?.numberOfLines = 0
+        
     }
     
-    override func setup(data: FDData?) {        
-        locationLabel?.text = data?.addressName ?? data?.pointName
-        stateImageView?.image = UIImage(named: "first")
+    override func setup(data: FDData?) {
+        locationLabel?.text = data?.localizedAddressName ?? data?.pointName
         let level = AQIStandards.getLevel(data?.mainIndex)
+        stateEmojiLabel?.text = AQIStandards.Level.emoji(level)
         stateDescriptionLabel?.text = AQIStandards.getLevelTitle(level)
         stateAdviceLabel?.text = AQIStandards.getHealthImplications(level)
         stateIndexLabel?.text = (data?.mainName ?? "") + " : " + "\(data?.mainIndex ?? 0)"

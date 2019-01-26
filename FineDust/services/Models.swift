@@ -31,7 +31,7 @@ class FDData {
     /// 측정소 이름
     var pointName: String?
     /// 측정소 주소 (by kakao API)
-    var addressName: String?
+    var localizedAddressName: String?
     
     convenience init(_ data: AQIData) {
         self.init()

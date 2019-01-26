@@ -37,43 +37,38 @@ class InitViewController: UIViewController {
         }
         
         GeoManager.shared.getCurrentLocation { (geo: GeoCoordinate?) in
-            if (geo != nil) {
-                log("location = \(geo!.latitude) : \(geo!.longitude)")
+            if let geo = geo {
+                log("location = \(geo.latitude) : \(geo.longitude)")
                 
-                let parameter = AQIParameters.GeoFeed(lat: geo!.latitude, lng: geo!.longitude, optional: nil)
+                let parameter = AQIParameters.GeoFeed(lat: geo.latitude, lng: geo.longitude, optional: nil)
                 
-                /*
-                self.getAKStationFeed(geo: geo!, completionHandler: { (stationFeedResponse:AKStationFeedResponse?) in
-                    if let data = stationFeedResponse?.list?[safe: 0] {
-                        self.success(data: data)
-                    } else {
-                        log("fail")
-                    }
-                })
-                */
-                
-                self.getAQIGeoFeed(parameter: parameter, completionHandler:
-                    { (response:AQIGeoFeedResponse?) in
-                        if response != nil {
-                            self.success(data: response!.data)
+                self.getAQIGeoFeed(parameter: parameter, completionHandler: { (response:AQIGeoFeedResponse?) in
+                        if let response = response {
+                            self.success(data: response.data)
                         } else {
                             self.getAQIIPFeed(completionHandler: { (response:AQIIPFeedResponse?) in
-                                if response != nil  {
-                                    self.success(data: response!.data)
+                                if let response = response {
+                                    self.success(data: response.data)
                                 } else {
                                     log("error")
                                 }
                             })
                         }
                 })
-                 
-                
-                KakaoAPI.getAddressName(parameter: KakaoParameters.Geo(lat: geo!.latitude, lng: geo!.longitude), completionHandler: { (response: KakaoAddressNameResponse?) in
-                    if let addressName = response?.documents?[safe:0]?.address_name {
-                        DataManager.shared.setCurrentAreaData(addressName)
-                    }
-                })
-                
+
+                print(Bundle.main.localizations)
+                switch Locale.current.languageCode {
+                case "ko":
+                    KakaoAPI.getAddressName(parameter: KakaoParameters.Geo(lat: geo.latitude, lng: geo.longitude), completionHandler: { (response: KakaoAddressNameResponse?) in
+                        if let response = response {
+                            DataManager.shared.setCurrentAreaData(response)
+                        }
+                    })
+                case "Base", "en":
+                    break
+                default:
+                    break
+                }
             } else {
                 log("getting location fail")
                 self.getAQIIPFeed(completionHandler: { (response:AQIIPFeedResponse?) in
@@ -97,33 +92,6 @@ class InitViewController: UIViewController {
         AQIAPIs.getIPFeed(parameter: AQIParameters.IPFeed()) { (response:AQIIPFeedResponse?, error:Error?) in
             completionHandler(response)
         }
-    }
-    
-    private func getAKStationFeed(geo: GeoCoordinate, completionHandler: @escaping (AKStationFeedResponse?) -> Void) {
-        /*
-        if let tm = PRTMCoordTrans.wgs84IntoTM128(withLatitude: geo.latitude, longitude: geo.longitude), let tmX = tm[safe:0] as? Double, let tmY = tm[safe:1] as? Double {
-            
-            let parameter = AKParameters.NearbyPoint(tmX: tmX, tmY: tmY)
-            
-            AKAPIs.Station.getNearbyPoints(parameter, completionHandler: { (nearbyPointResponse: AKNearbyPointResponse?) in
-                
-                if let stationName = nearbyPointResponse?.list?[safe:0]?.stationName {
-                    
-                    let parameter = AKParameters.StationFeed(stationName: stationName, ver: nil)
-                    AKAPIs.Measure.getStationFeed(parameter, completionHandler: { (stationFeedResponse: AKStationFeedResponse?) in
-                        
-                        completionHandler(stationFeedResponse)
-                    })
-                } else {
-                    log("Can't get nearby point")
-                    completionHandler(nil)
-                }
-            })
-        } else {
-            log("Can't get TM128 coordinate")
-            completionHandler(nil)
-        }
-         */
     }
     
     private func success(data: AQIData?) {

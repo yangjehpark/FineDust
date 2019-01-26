@@ -55,6 +55,14 @@ class FDCurrentViewController: UIViewController {
     func dataChanged() {
         mainTableView.backgroundColor = AQIStandards.getLevelBackgroundColor(AQIStandards.getLevel(data?.mainIndex))
     }
+    
+    @IBAction func shareButtonPressed() {
+        print("shareButtonPressed")
+    }
+    
+    @IBAction func reloadButtonPressed() {
+        mainTableView.reloadData()
+    }
 }
 
 extension FDCurrentViewController: UITableViewDelegate, UITableViewDataSource {

@@ -18,7 +18,19 @@ class AQIStandards {
         case Unhealthy
         case Dangerous
         case Hazardous
+        static func emoji(_ level: Level) -> String {
+            switch level {
+            case .Unknown: return "💬"
+            case .Good: return "😀"
+            case .Moderate: return "😧"
+            case .Bad: return "🤭"
+            case .Unhealthy: return "😷"
+            case .Dangerous: return "😰"
+            case .Hazardous: return "😱"
+            }
+        }
     }
+    
     
     static func getLevel(_ value: Double?) -> AQIStandards.Level {
         if value != nil {
@@ -67,17 +79,17 @@ class AQIStandards {
         case .Unknown:
             return " "
         case .Good:
-            return "Air quality is considered satisfactory, and air pollution poses little or no risk"
+            return "AQIGood".localized
         case .Moderate:
-            return "Air quality is acceptable; however, for some pollutants there may be a moderate health concern for a very small number of people who are unusually sensitive to air pollution."
+            return "AQIModerate".localized
         case .Bad:
-            return "Members of sensitive groups may experience health effects. The general public is not likely to be affected."
+            return "AQIBad".localized
         case .Unhealthy:
-            return "Everyone may begin to experience health effects; members of sensitive groups may experience more serious health effects"
+            return "AQIUnhealthy".localized
         case .Dangerous:
-            return "Health warnings of emergency conditions. The entire population is more likely to be affected."
+            return "AQIDangerous".localized
         case .Hazardous:
-            return "Health alert: everyone may experience more serious health effects"
+            return "AQIHazardous".localized
         }
     }
     

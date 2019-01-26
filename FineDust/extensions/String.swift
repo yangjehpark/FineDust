@@ -11,10 +11,6 @@ import Foundation
 extension String {
 
     var localized: String {
-        var result = Bundle.main.localizedString(forKey: self, value: nil, table: nil)
-        if result == self {
-            result = "#" + result
-        }
-        return result
+        return Bundle.main.localizedString(forKey: self, value: nil, table: nil)
     }
 }

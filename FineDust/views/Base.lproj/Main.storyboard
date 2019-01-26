@@ -68,7 +68,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oEO-hz-yFk"/>
                     </view>
-                    <navigationItem key="navigationItem" id="QpP-pH-IDh"/>
+                    <navigationItem key="navigationItem" id="QpP-pH-IDh">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="ze1-rO-LkY">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="shareButtonPressed" destination="dIE-86-fJ9" id="e1m-i8-vyP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="mainTableView" destination="4Ok-Tq-uIX" id="uWR-nX-ztt"/>
                         <outlet property="topNavigationItem" destination="QpP-pH-IDh" id="ViW-96-Oq1"/>
