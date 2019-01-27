@@ -53,6 +53,7 @@
 		0439648F21F74D5A00CAED52 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0439648E21F74D5A00CAED52 /* Array.swift */; };
 		0439649121F761F400CAED52 /* VerticalStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0439649021F761F400CAED52 /* VerticalStepper.swift */; };
 		0439649321FDBFE500CAED52 /* ScreenshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0439649221FDBFE500CAED52 /* ScreenshotHelper.swift */; };
+		0439649521FDDFB300CAED52 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0439649421FDDFB300CAED52 /* AlertHelper.swift */; };
 		0448008B20C901FC005E1D68 /* FDAddAreaSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448008A20C901FC005E1D68 /* FDAddAreaSearchCell.swift */; };
 		0448008D20C90212005E1D68 /* FDAddAreaSearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0448008C20C90212005E1D68 /* FDAddAreaSearchCell.xib */; };
 		0448009020C913D2005E1D68 /* FDEditAreaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448008F20C913D2005E1D68 /* FDEditAreaViewController.swift */; };
@@ -162,6 +163,7 @@
 		0439648E21F74D5A00CAED52 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		0439649021F761F400CAED52 /* VerticalStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalStepper.swift; sourceTree = "<group>"; };
 		0439649221FDBFE500CAED52 /* ScreenshotHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotHelper.swift; sourceTree = "<group>"; };
+		0439649421FDDFB300CAED52 /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
 		0448008A20C901FC005E1D68 /* FDAddAreaSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDAddAreaSearchCell.swift; sourceTree = "<group>"; };
 		0448008C20C90212005E1D68 /* FDAddAreaSearchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FDAddAreaSearchCell.xib; sourceTree = "<group>"; };
 		0448008F20C913D2005E1D68 /* FDEditAreaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDEditAreaViewController.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 				0402C6BF2099A5B500CE232B /* services */,
 				0402C6BE2099A5A900CE232B /* views */,
 				0402C6D82099B03000CE232B /* utils */,
+				0439649621FDEBE900CAED52 /* helpers */,
 				04C072BC209AB99A007F7017 /* extensions */,
 				0402C6A52099A56200CE232B /* Assets.xcassets */,
 				0439648C21F742C800CAED52 /* Localizable.strings */,
@@ -275,7 +278,6 @@
 		0402C6BE2099A5A900CE232B /* views */ = {
 			isa = PBXGroup;
 			children = (
-				0402C6CB2099AE2600CE232B /* ViewControllerHelper.swift */,
 				0402C6C92099AB5000CE232B /* InitViewController.swift */,
 				0402C6A22099A56200CE232B /* Main.storyboard */,
 				0402C6DD2099B1B400CE232B /* basics */,
@@ -332,7 +334,6 @@
 				0402C6DB2099B0E200CE232B /* ViewUtils.swift */,
 				04932B1E20A5B970006E5907 /* AirQualityStandards.swift */,
 				0439649021F761F400CAED52 /* VerticalStepper.swift */,
-				0439649221FDBFE500CAED52 /* ScreenshotHelper.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -424,6 +425,16 @@
 				0426987320A58CC1001735F5 /* FDCurrentInfomationHeader.xib */,
 			);
 			path = headers;
+			sourceTree = "<group>";
+		};
+		0439649621FDEBE900CAED52 /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0439649421FDDFB300CAED52 /* AlertHelper.swift */,
+				0402C6CB2099AE2600CE232B /* ViewControllerHelper.swift */,
+				0439649221FDBFE500CAED52 /* ScreenshotHelper.swift */,
+			);
+			path = helpers;
 			sourceTree = "<group>";
 		};
 		0448008920C901E1005E1D68 /* add */ = {
@@ -728,6 +739,7 @@
 			files = (
 				0448D12420BAAED60030FA2D /* KakaoRequestParameters.swift in Sources */,
 				0402C6E02099B32000CE232B /* Log.swift in Sources */,
+				0439649521FDDFB300CAED52 /* AlertHelper.swift in Sources */,
 				0426986220A573D5001735F5 /* FDCurrentInfomationCell.swift in Sources */,
 				04C072DB209C2FA4007F7017 /* GeoManager.swift in Sources */,
 				04C072CF209B0821007F7017 /* AQIResponseModels.swift in Sources */,

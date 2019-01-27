@@ -44,4 +44,20 @@ class ViewControllerHelper {
             
         }
     }
+    
+    static func topViewController(_ vc: UIViewController? = nil) -> UIViewController? {
+        let base: UIViewController? = vc ?? UIApplication.shared.keyWindow?.rootViewController
+        if let nav = base as? UINavigationController {
+            return ViewControllerHelper.topViewController(nav.visibleViewController)
+        }
+        if let tab = base as? UITabBarController {
+            if let selected = tab.selectedViewController {
+                return ViewControllerHelper.topViewController(selected)
+            }
+        }
+        if let presented = base?.presentedViewController {
+            return ViewControllerHelper.topViewController(presented)
+        }
+        return base
+    }
 }

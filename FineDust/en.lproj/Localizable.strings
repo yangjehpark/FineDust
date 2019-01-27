@@ -6,7 +6,8 @@
   Copyright © 2019 YangJehPark. All rights reserved.
 */
 
-"ok" = "OK";
+"OK" = "OK";
+"Cancel" = "Cancel";
 "forecase" = "Forecast";
 "now" = "Now";
 "satellite" = "Satellite";
@@ -16,3 +17,18 @@
 "AQIUnhealthy" = "Everyone may begin to experience health effects; members of sensitive groups may experience more serious health effects";
 "AQIDangerous" = "Health warnings of emergency conditions. The entire population is more likely to be affected.";
 "AQIHazardous" = "Health alert: everyone may experience more serious health effects";
+"pm10" = "FineParticle";
+"pm25" = "UltraFineParticle";
+"No2" = "NitrogenDioxide";
+"So2" = "SulfurDioxide";
+"CO" = "CarbonMonoxide";
+"O3" = "Ozon";
+"Unknown" = "Unknown";
+"Good" = "Good";
+"Moderate" = "Moderate";
+"Bad" = "Bad";
+"Unhealthy" = "Unhealthy";
+"Dangerous" = "Dangerous";
+"Hazardous" = "Hazardous";
+"Help" = "Help";
+"HelpMessage" = "Followed by US-EPA air quality index.";

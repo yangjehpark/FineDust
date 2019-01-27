@@ -12,6 +12,7 @@ class AQIStandards {
     
     enum Level: Int {
         case Unknown = 0
+        case Perfect
         case Good
         case Moderate
         case Bad
@@ -21,7 +22,7 @@ class AQIStandards {
         static func emoji(_ level: Level) -> String {
             switch level {
             case .Unknown: return "💬"
-            case .Good: return "😀"
+            case .Perfect, .Good: return "😀"
             case .Moderate: return "😧"
             case .Bad: return "🤭"
             case .Unhealthy: return "😷"
@@ -35,6 +36,8 @@ class AQIStandards {
     static func getLevel(_ value: Double?) -> AQIStandards.Level {
         if value != nil {
             switch value! {
+            case 0...10:
+                return .Perfect
             case 0...50:
                 return .Good
             case 51...100:
@@ -58,19 +61,19 @@ class AQIStandards {
     static func getLevelTitle(_ level: AQIStandards.Level) -> String {
         switch level {
         case .Unknown:
-            return "Unknown"
-        case .Good:
-            return "Good"
+            return "Unknown".localized
+        case .Perfect, .Good:
+            return "Good".localized
         case .Moderate:
-            return "Moderate"
+            return "Moderate".localized
         case .Bad:
-            return "Bad"
+            return "Bad".localized
         case .Unhealthy:
-            return "Unhealthy"
+            return "Unhealthy".localized
         case .Dangerous:
-            return "Dangerous"
+            return "Dangerous".localized
         case .Hazardous:
-            return "Hazardous"
+            return "Hazardous".localized
         }
     }
     
@@ -78,7 +81,7 @@ class AQIStandards {
         switch level {
         case .Unknown:
             return " "
-        case .Good:
+        case .Perfect, .Good:
             return "AQIGood".localized
         case .Moderate:
             return "AQIModerate".localized
@@ -97,6 +100,8 @@ class AQIStandards {
         switch level {
         case .Unknown:
             return .white
+        case .Perfect:
+            return UIColor(r: 64, g: 148, b: 255)
         case .Good:
             return UIColor(r: 64, g: 148, b: 104)
         case .Moderate:
@@ -116,8 +121,45 @@ class AQIStandards {
         switch level {
         case .Unknown, .Moderate, .Bad:
             return .black
-        case .Good, .Unhealthy, .Dangerous, .Hazardous:
+        case .Perfect, .Good, .Unhealthy, .Dangerous, .Hazardous:
             return .white
         }
+    }
+    
+    static var helpString: String {
+        return "HelpMessage".localized + "\n(US-EPA 2016)" + "\n\n" +
+            helpStringArray[0] + "\n" +
+            helpStringArray[1] + "\n" +
+            helpStringArray[2] + "\n" +
+            helpStringArray[3] + "\n" +
+            helpStringArray[4] + "\n" +
+            helpStringArray[5] + "\n"
+    }
+    
+    private static var helpStringArray: [String] {
+        return [
+            "0-50 : " + AQIStandards.getLevelTitle(.Good),
+            "51-100 : " +  AQIStandards.getLevelTitle(.Moderate),
+            "101-150 : " + AQIStandards.getLevelTitle(.Bad),
+            "151-200 : " + AQIStandards.getLevelTitle(.Unhealthy),
+            "201-300 : " + AQIStandards.getLevelTitle(.Dangerous),
+            "301- : " + AQIStandards.getLevelTitle(.Hazardous),
+        ]
+    }
+    
+    static var attributedHelpString: NSMutableAttributedString {
+        var attributed = NSMutableAttributedString(string: helpString)
+        func addAttribute(level: Level) {
+            let range = (attributed.string as NSString).range(of: helpStringArray[level.rawValue-2])
+            let attribute = [NSAttributedStringKey.foregroundColor: AQIStandards.getLevelBackgroundColor(level)]
+            attributed.addAttributes(attribute, range: range)
+        }
+        addAttribute(level: .Good)
+        addAttribute(level: .Moderate)
+        addAttribute(level: .Bad)
+        addAttribute(level: .Unhealthy)
+        addAttribute(level: .Dangerous)
+        addAttribute(level: .Hazardous)
+        return attributed
     }
 }

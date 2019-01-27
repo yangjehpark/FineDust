@@ -10,7 +10,7 @@ import UIKit
 
 class FDCurrentStandardColorHeader: UITableViewHeaderFooterView {
     
-    static let defaultHeight: CGFloat = 3
+    static let defaultHeight: CGFloat = 10
     
     @IBOutlet weak var mainView: UIView!
     
@@ -21,5 +21,13 @@ class FDCurrentStandardColorHeader: UITableViewHeaderFooterView {
                 view.backgroundColor = AQIStandards.getLevelBackgroundColor(level)
             }
         }
+        
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(taped))
+        tapRecognizer.numberOfTapsRequired = 1
+        addGestureRecognizer(tapRecognizer)
+    }
+    
+    @objc func taped() {
+        AlertHelper.show(nil, title: "Help".localized, attributedBody: AQIStandards.attributedHelpString, completionHandler: nil)
     }
 }

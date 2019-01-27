@@ -6,7 +6,8 @@
   Copyright © 2019 YangJehPark. All rights reserved.
 */
 
-"ok" = "확인";
+"OK" = "확인";
+"Cancel" = "취소";
 "forecase" = "예보";
 "now" = "지금";
 "satellite" = "위성";
@@ -16,3 +17,18 @@
 "AQIUnhealthy" = "모든 사람들에게 건강에 영향을 미칠 수 있습니다. 민감한 그룹의 구성원은 더 심각한 건강상의 영향이 있을 수 있습니다.";
 "AQIDangerous" = "응급 상황에 대한 건강 경고. 모든 대중이 영향을 받을 가능성이 큽니다.";
 "AQIHazardous" = "경고 : 모든 사람이 더 심각한 건강상의 영향을 경험할 수 있습니다.";
+"pm10" = "미세먼지";
+"pm25" = "초미세먼지";
+"No2" = "이산화질소";
+"So2" = "이산화황";
+"CO" = "일산화탄소";
+"O3" = "오존";
+"Unknown" = "알수없음";
+"Good" = "좋음";
+"Moderate" = "보통";
+"Bad" = "나쁨";
+"Unhealthy" = "매우 나쁨";
+"Dangerous" = "위험함";
+"Hazardous" = "치명적임";
+"Help" = "도움말";
+"HelpMessage" = "미국 환경보호청의 공기질 지수를 따릅니다.";

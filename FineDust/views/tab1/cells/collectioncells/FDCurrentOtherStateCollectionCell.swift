@@ -20,7 +20,7 @@ class FDCurrentOtherStateCollectionCell: UICollectionViewCell {
     }
     
     func setup(title:String, value:Double) {
-        self.titleLabel.text = title
+        self.titleLabel.text = title.localized
         self.valueLabel.text = "\(value)"
     }
     
