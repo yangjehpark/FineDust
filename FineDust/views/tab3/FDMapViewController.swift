@@ -14,17 +14,15 @@ class FDMapViewController: UIViewController {
 
     @IBOutlet weak var topNavigationItem: UINavigationItem?
     @IBOutlet weak var mainWebView: WKWebView!
+    @IBOutlet weak var hereImageView: UIImageView!
+    @IBOutlet weak var hereImageViewWidth: NSLayoutConstraint!
     @IBOutlet weak var progressView: UIView!
     @IBOutlet weak var verticalStepper: VerticalStepper!
     private var webLoadProgress: Double = 0 {
         didSet {
-            UIView.animate(withDuration: 0.1, animations: {
+            UIView.animate(withDuration: 0.25) {
                 self.progressView.alpha = CGFloat(1-self.webLoadProgress)
-            }, completion: { (complete) in
-                if self.webLoadProgress == 1 {
-                    self.loadComplete()
-                }
-            })
+            }
         }
     }
     private var indicator: NVActivityIndicatorView?
@@ -47,10 +45,11 @@ class FDMapViewController: UIViewController {
         super.viewDidLoad()
         
         mainWebView.isUserInteractionEnabled = false
+        mainWebView.navigationDelegate = self
         
         addObserverOnProgress()
         setVerticalStepper()
-        loadStart()
+        load()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -59,27 +58,41 @@ class FDMapViewController: UIViewController {
     }
     
     @IBAction func reloadData() {
-        loadStart()
+        load()
     }
     
     @IBAction func shareButtonPressed() {
         print("shareButtonPressed")
     }
+    
+    private func load() {
+        GeoManager.shared.getCurrentLocation { (geo) in
+            guard let geo = geo else {
+                self.loadFail()
+                return
+            }
+//            Constants.Sejong.longitude
+//            Constants.Sejong.latitude
+            let urlString: String = "https://www.airvisual.com/earth#current/wind/surface/level/orthographic=\(geo.longitude),\(geo.latitude),\(self.zLevels[self.zIndex])"
+            self.adjustHereImageViewWidth()
+            self.mainWebView.load(URLRequest(url: URL(string: urlString)!))
+            print(urlString)
+        }
+    }
 }
 
-extension FDMapViewController {
+extension FDMapViewController: WKNavigationDelegate {
     
-    func loadStart() {
-        showIndicator()
-        showProgressView()
-        let urlString: String = "https://www.airvisual.com/earth#current/wind/surface/level/orthographic=\(Constants.Sejong.longitude),\(Constants.Sejong.latitude),\(zLevels[zIndex])"
-        mainWebView.load(URLRequest(url: URL(string: urlString)!))
-        print(urlString)
+    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+        loadStart()
     }
     
-    func loadComplete() {
-        hideIndicator()
-        hideProgressView()
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        loadFail()
+    }
+
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        loadComplete()
     }
 }
 
@@ -93,6 +106,24 @@ extension FDMapViewController {
         if keyPath == "estimatedProgress" {
             webLoadProgress = mainWebView.estimatedProgress
         }
+    }
+    
+    private func loadStart() {
+        showIndicator()
+        showProgressView()
+        hideHereImage()
+    }
+    
+    private func loadFail() {
+        hideIndicator()
+        hideProgressView()
+        hideHereImage()
+    }
+    
+    private func loadComplete() {
+        hideIndicator()
+        hideProgressView()
+        showHereImage()
     }
 }
 
@@ -119,6 +150,27 @@ extension FDMapViewController {
         progressView.alpha = 0
     }
 }
+
+
+extension FDMapViewController {
+    
+    func showHereImage() {
+        hereImageView.isHidden = false
+    }
+    
+    func hideHereImage() {
+        hereImageView.isHidden = true
+    }
+    
+    func adjustHereImageViewWidth() {
+        let value = zLevels[zIndex]
+        let width = CGFloat(value/100)
+        print(value)
+        print(width)
+        hereImageViewWidth.constant = width
+    }
+}
+
 
 extension FDMapViewController {
     

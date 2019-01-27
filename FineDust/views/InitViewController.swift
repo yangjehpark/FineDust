@@ -9,7 +9,6 @@
 import UIKit
 import SideMenu
 import NVActivityIndicatorView
-//import PRTMCoordTrans
 
 class InitViewController: UIViewController {
     

@@ -62,7 +62,6 @@
 		0448D12620BAAEE20030FA2D /* KakaoResponseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448D12520BAAEE20030FA2D /* KakaoResponseModels.swift */; };
 		0472C96520A2D53600D7E5A1 /* UserAreaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0472C96420A2D53600D7E5A1 /* UserAreaManager.swift */; };
 		04932B1F20A5B970006E5907 /* AirQualityStandards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04932B1E20A5B970006E5907 /* AirQualityStandards.swift */; };
-		04BBF38020A9287F00385C5E /* PRTMCoordTrans.h in Sources */ = {isa = PBXBuildFile; fileRef = 04BBF37F20A9285B00385C5E /* PRTMCoordTrans.h */; };
 		04C072B9209AB61C007F7017 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C072B8209AB61C007F7017 /* Constants.swift */; };
 		04C072BB209AB66D007F7017 /* AQIAPIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C072BA209AB66D007F7017 /* AQIAPIs.swift */; };
 		04C072C5209AB9B9007F7017 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C072BD209AB9B8007F7017 /* UIButton.swift */; };
@@ -170,9 +169,7 @@
 		0448D12320BAAED60030FA2D /* KakaoRequestParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoRequestParameters.swift; sourceTree = "<group>"; };
 		0448D12520BAAEE20030FA2D /* KakaoResponseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoResponseModels.swift; sourceTree = "<group>"; };
 		045B2D1121C8813400BAA4B7 /* libPRTMCoordTrans.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPRTMCoordTrans.a; path = FineDust/utils/PRTMCoordTrans/libPRTMCoordTrans.a; sourceTree = "<group>"; };
-		045B2D1321C8814600BAA4B7 /* libPRTMCoordTrans.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPRTMCoordTrans.a; sourceTree = "<group>"; };
 		045B2D1621C8816000BAA4B7 /* libPRTMCoordTrans_x86.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPRTMCoordTrans_x86.a; path = FineDust/utils/PRTMCoordTrans/libPRTMCoordTrans_x86.a; sourceTree = "<group>"; };
-		045B2D1821C8816D00BAA4B7 /* libPRTMCoordTrans_x86.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPRTMCoordTrans_x86.a; sourceTree = "<group>"; };
 		045B2D1A21C8825100BAA4B7 /* FineDust.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FineDust.entitlements; sourceTree = "<group>"; };
 		045B2D2121C88D4C00BAA4B7 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		045B2D2321C88D4C00BAA4B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -180,7 +177,6 @@
 		0472C96420A2D53600D7E5A1 /* UserAreaManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAreaManager.swift; sourceTree = "<group>"; };
 		04932B1E20A5B970006E5907 /* AirQualityStandards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityStandards.swift; sourceTree = "<group>"; };
 		04BBF37B20A9271800385C5E /* libProj4.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libProj4.a; path = FineDust/utils/PRTMCoordTrans/libProj4.a; sourceTree = "<group>"; };
-		04BBF37F20A9285B00385C5E /* PRTMCoordTrans.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRTMCoordTrans.h; sourceTree = "<group>"; };
 		04BBF38120A928ED00385C5E /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		04C072B8209AB61C007F7017 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		04C072BA209AB66D007F7017 /* AQIAPIs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AQIAPIs.swift; sourceTree = "<group>"; };
@@ -328,7 +324,6 @@
 		0402C6D82099B03000CE232B /* utils */ = {
 			isa = PBXGroup;
 			children = (
-				04BBF38220A929CF00385C5E /* PRTMCoordTrans */,
 				0402C6D92099B0B800CE232B /* Log.swift */,
 				0402C6DA2099B0B800CE232B /* Utils.swift */,
 				04C072D4209BF8E6007F7017 /* JSONable.swift */,
@@ -458,16 +453,6 @@
 				045B2D2321C88D4C00BAA4B7 /* Info.plist */,
 			);
 			path = NotiEx;
-			sourceTree = "<group>";
-		};
-		04BBF38220A929CF00385C5E /* PRTMCoordTrans */ = {
-			isa = PBXGroup;
-			children = (
-				045B2D1821C8816D00BAA4B7 /* libPRTMCoordTrans_x86.a */,
-				045B2D1321C8814600BAA4B7 /* libPRTMCoordTrans.a */,
-				04BBF37F20A9285B00385C5E /* PRTMCoordTrans.h */,
-			);
-			path = PRTMCoordTrans;
 			sourceTree = "<group>";
 		};
 		04C072BC209AB99A007F7017 /* extensions */ = {
@@ -739,7 +724,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0448D12420BAAED60030FA2D /* KakaoRequestParameters.swift in Sources */,
-				04BBF38020A9287F00385C5E /* PRTMCoordTrans.h in Sources */,
 				0402C6E02099B32000CE232B /* Log.swift in Sources */,
 				0426986220A573D5001735F5 /* FDCurrentInfomationCell.swift in Sources */,
 				04C072DB209C2FA4007F7017 /* GeoManager.swift in Sources */,

@@ -93,14 +93,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ef-oF-1Ma">
-                                <rect key="frame" x="0.0" y="20" width="376" height="578"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ck5-iq-vre" userLabel="Map View">
+                                <rect key="frame" x="0.0" y="20" width="375" height="578"/>
+                                <subviews>
+                                    <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ef-oF-1Ma">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="578"/>
+                                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <wkWebViewConfiguration key="configuration">
+                                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                            <wkPreferences key="preferences"/>
+                                        </wkWebViewConfiguration>
+                                    </wkWebView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DKt-WI-QkL" userLabel="Center View">
+                                        <rect key="frame" x="182.5" y="288.5" width="10" height="1"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="e28-fJ-SlY"/>
+                                            <constraint firstAttribute="width" constant="10" id="xay-U7-B5e"/>
+                                        </constraints>
+                                    </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map_here" translatesAutoresizingMaskIntoConstraints="NO" id="GFY-aJ-dBr">
+                                        <rect key="frame" x="167.5" y="249.5" width="40" height="40"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="7aE-c2-xMt"/>
+                                            <constraint firstAttribute="width" secondItem="GFY-aJ-dBr" secondAttribute="height" multiplier="1:1" id="iLI-MM-Et5"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="3Ef-oF-1Ma" secondAttribute="bottom" id="0XP-Dn-HMC"/>
+                                    <constraint firstAttribute="trailing" secondItem="3Ef-oF-1Ma" secondAttribute="trailing" id="5Hq-al-CCT"/>
+                                    <constraint firstItem="GFY-aJ-dBr" firstAttribute="centerX" secondItem="ck5-iq-vre" secondAttribute="centerX" id="7ua-46-Bfr"/>
+                                    <constraint firstItem="3Ef-oF-1Ma" firstAttribute="top" secondItem="ck5-iq-vre" secondAttribute="top" id="BNn-rV-Y20"/>
+                                    <constraint firstItem="DKt-WI-QkL" firstAttribute="centerY" secondItem="ck5-iq-vre" secondAttribute="centerY" id="GIf-Yx-6cK"/>
+                                    <constraint firstItem="DKt-WI-QkL" firstAttribute="top" secondItem="GFY-aJ-dBr" secondAttribute="bottom" constant="-1" id="Xeu-w8-fKy"/>
+                                    <constraint firstItem="3Ef-oF-1Ma" firstAttribute="leading" secondItem="ck5-iq-vre" secondAttribute="leading" id="uVi-Y1-e13"/>
+                                    <constraint firstItem="DKt-WI-QkL" firstAttribute="centerX" secondItem="ck5-iq-vre" secondAttribute="centerX" id="yE3-gC-ep2"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="odH-aO-Ljr" userLabel="ClearView">
                                 <rect key="frame" x="0.0" y="323" width="375" height="1"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -157,7 +189,6 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="odH-aO-Ljr" secondAttribute="trailing" id="04L-l0-CZ3"/>
                             <constraint firstItem="cu1-7n-42C" firstAttribute="trailing" secondItem="wEw-tp-1BQ" secondAttribute="trailing" id="10y-v6-jvK"/>
-                            <constraint firstItem="3Ef-oF-1Ma" firstAttribute="leading" secondItem="wEw-tp-1BQ" secondAttribute="leading" id="2XC-Ro-nDm"/>
                             <constraint firstItem="cu1-7n-42C" firstAttribute="leading" secondItem="wEw-tp-1BQ" secondAttribute="leading" id="764-1d-WPe"/>
                             <constraint firstItem="J7W-Rq-fOA" firstAttribute="top" secondItem="odH-aO-Ljr" secondAttribute="bottom" id="9o2-DU-V3u"/>
                             <constraint firstItem="wEw-tp-1BQ" firstAttribute="bottom" secondItem="OPn-vo-Mx1" secondAttribute="bottom" id="GJr-cR-CFF"/>
@@ -165,18 +196,21 @@
                             <constraint firstItem="OPn-vo-Mx1" firstAttribute="top" secondItem="cu1-7n-42C" secondAttribute="bottom" id="HkV-Ml-sGg"/>
                             <constraint firstItem="OPn-vo-Mx1" firstAttribute="leading" secondItem="wEw-tp-1BQ" secondAttribute="leading" id="Hrt-mb-MLZ"/>
                             <constraint firstItem="cu1-7n-42C" firstAttribute="top" secondItem="wEw-tp-1BQ" secondAttribute="top" id="InR-vZ-EaC"/>
+                            <constraint firstItem="ck5-iq-vre" firstAttribute="leading" secondItem="wEw-tp-1BQ" secondAttribute="leading" id="Ipi-FR-uta"/>
+                            <constraint firstItem="ck5-iq-vre" firstAttribute="top" secondItem="wEw-tp-1BQ" secondAttribute="top" id="L6q-hM-LgG"/>
                             <constraint firstItem="odH-aO-Ljr" firstAttribute="centerY" secondItem="Bd1-S3-z8B" secondAttribute="centerY" id="OFy-kX-DVc"/>
                             <constraint firstItem="wEw-tp-1BQ" firstAttribute="trailing" secondItem="J7W-Rq-fOA" secondAttribute="trailing" constant="15" id="PBr-Uk-url"/>
-                            <constraint firstItem="3Ef-oF-1Ma" firstAttribute="top" secondItem="wEw-tp-1BQ" secondAttribute="top" id="Q4b-gQ-WHr"/>
                             <constraint firstItem="wEw-tp-1BQ" firstAttribute="trailing" secondItem="OPn-vo-Mx1" secondAttribute="trailing" id="SL7-Ed-GeS"/>
-                            <constraint firstItem="3Ef-oF-1Ma" firstAttribute="trailing" secondItem="wEw-tp-1BQ" secondAttribute="trailing" constant="1" id="dH4-Ux-QKs"/>
-                            <constraint firstItem="wEw-tp-1BQ" firstAttribute="bottom" secondItem="3Ef-oF-1Ma" secondAttribute="bottom" id="ezg-7z-XMt"/>
+                            <constraint firstItem="wEw-tp-1BQ" firstAttribute="bottom" secondItem="ck5-iq-vre" secondAttribute="bottom" id="g2d-ze-b3C"/>
+                            <constraint firstItem="wEw-tp-1BQ" firstAttribute="trailing" secondItem="ck5-iq-vre" secondAttribute="trailing" id="iEb-TP-BFJ"/>
                             <constraint firstItem="wEw-tp-1BQ" firstAttribute="bottom" secondItem="J7W-Rq-fOA" secondAttribute="bottom" id="z46-Xe-Ji3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wEw-tp-1BQ"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="more" id="V3O-cL-nc0"/>
                     <connections>
+                        <outlet property="hereImageView" destination="GFY-aJ-dBr" id="Vlg-lN-8LU"/>
+                        <outlet property="hereImageViewWidth" destination="7aE-c2-xMt" id="ngC-qw-DvG"/>
                         <outlet property="mainWebView" destination="3Ef-oF-1Ma" id="2zD-tD-C7E"/>
                         <outlet property="progressView" destination="OPn-vo-Mx1" id="iXZ-x0-5wD"/>
                         <outlet property="topNavigationItem" destination="yM5-Mf-K28" id="WjT-9h-ddr"/>
@@ -276,4 +310,7 @@
             <point key="canvasLocation" x="165" y="1853"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="map_here" width="19.200000762939453" height="19.200000762939453"/>
+    </resources>
 </document>
