@@ -13,6 +13,7 @@ import WebKit
 class FDMapViewController: UIViewController {
 
     @IBOutlet weak var topNavigationItem: UINavigationItem?
+    @IBOutlet weak var mapBackgroundView: UIView!
     @IBOutlet weak var mainWebView: WKWebView!
     @IBOutlet weak var hereImageView: UIImageView!
     @IBOutlet weak var hereImageViewWidth: NSLayoutConstraint!
@@ -62,7 +63,11 @@ class FDMapViewController: UIViewController {
     }
     
     @IBAction func shareButtonPressed() {
-        print("shareButtonPressed")
+        if let screenshot = ScreenshotHelper.takeScreenshot(tagetView: mapBackgroundView) {
+            print("shareButtonPressed success")
+        } else {
+            print("shareButtonPressed fail")
+        }
     }
     
     private func load() {
@@ -71,8 +76,6 @@ class FDMapViewController: UIViewController {
                 self.loadFail()
                 return
             }
-//            Constants.Sejong.longitude
-//            Constants.Sejong.latitude
             let urlString: String = "https://www.airvisual.com/earth#current/wind/surface/level/orthographic=\(geo.longitude),\(geo.latitude),\(self.zLevels[self.zIndex])"
             self.adjustHereImageViewWidth()
             self.mainWebView.load(URLRequest(url: URL(string: urlString)!))

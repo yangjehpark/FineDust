@@ -93,7 +93,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ck5-iq-vre" userLabel="Map View">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ck5-iq-vre">
                                 <rect key="frame" x="0.0" y="20" width="375" height="578"/>
                                 <subviews>
                                     <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ef-oF-1Ma">
@@ -212,6 +212,7 @@
                         <outlet property="hereImageView" destination="GFY-aJ-dBr" id="Vlg-lN-8LU"/>
                         <outlet property="hereImageViewWidth" destination="7aE-c2-xMt" id="ngC-qw-DvG"/>
                         <outlet property="mainWebView" destination="3Ef-oF-1Ma" id="2zD-tD-C7E"/>
+                        <outlet property="mapBackgroundView" destination="ck5-iq-vre" id="xsF-UM-vX7"/>
                         <outlet property="progressView" destination="OPn-vo-Mx1" id="iXZ-x0-5wD"/>
                         <outlet property="topNavigationItem" destination="yM5-Mf-K28" id="WjT-9h-ddr"/>
                         <outlet property="verticalStepper" destination="NSQ-vP-gYr" id="KmQ-x6-vrb"/>

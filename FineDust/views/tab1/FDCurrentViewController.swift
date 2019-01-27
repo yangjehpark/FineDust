@@ -57,7 +57,14 @@ class FDCurrentViewController: UIViewController {
     }
     
     @IBAction func shareButtonPressed() {
-        print("shareButtonPressed")
+        if let currentStateCellView = mainTableView.cellForRow(at: IndexPath(row: 0, section: Section.CurrentState.rawValue))?.contentView {
+            currentStateCellView.backgroundColor = AQIStandards.getLevelBackgroundColor(AQIStandards.getLevel(data?.mainIndex))
+            if let screenshot = ScreenshotHelper.takeScreenshot(tagetView: currentStateCellView) {
+                print("shareButtonPressed success")
+                return
+            }
+        }
+        print("shareButtonPressed fail")
     }
     
     @IBAction func reloadButtonPressed() {
