@@ -22,7 +22,6 @@ class FDCurrentStateCell: FDCurrentCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         locationLabel?.numberOfLines = 0
-        
     }
     
     override func setup(data: FDData?) {
@@ -31,7 +30,7 @@ class FDCurrentStateCell: FDCurrentCell {
         stateEmojiLabel?.text = AQIStandards.Level.emoji(level)
         stateDescriptionLabel?.text = AQIStandards.getLevelTitle(level)
         stateAdviceLabel?.text = AQIStandards.getHealthImplications(level)
-        stateIndexLabel?.text = (data?.mainName ?? "") + " : " + "\(data?.mainIndex ?? 0)"
+        stateIndexLabel?.text = (data?.mainName ?? "Index") + " : " + "\(data?.mainIndex ?? 0)"
         timeLabel?.text = data?.measureTime
     }
 }

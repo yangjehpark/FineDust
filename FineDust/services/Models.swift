@@ -37,7 +37,7 @@ class FDData {
         self.init()
         
         mainIndex = data.aqi
-        mainName = data.dominentpol
+        mainName = "AQI"
         co = data.aqiInfo?.co
         pm25 = data.aqiInfo?.pm25
         pm10 = data.aqiInfo?.pm10
