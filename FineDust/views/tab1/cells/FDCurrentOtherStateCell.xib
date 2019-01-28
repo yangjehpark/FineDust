@@ -19,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="none" prefetchingEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9I7-u9-vEQ">
-                        <rect key="frame" x="10" y="0.0" width="365" height="79.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="Tsb-fc-lTV">
                             <size key="itemSize" width="60" height="60"/>
@@ -34,7 +34,7 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="9I7-u9-vEQ" firstAttribute="leading" secondItem="Ga8-WF-kmN" secondAttribute="leading" constant="10" id="2D2-kH-MOI"/>
+                    <constraint firstItem="9I7-u9-vEQ" firstAttribute="leading" secondItem="Ga8-WF-kmN" secondAttribute="leading" id="2D2-kH-MOI"/>
                     <constraint firstAttribute="bottom" secondItem="9I7-u9-vEQ" secondAttribute="bottom" id="C54-MI-8WP"/>
                     <constraint firstItem="9I7-u9-vEQ" firstAttribute="top" secondItem="Ga8-WF-kmN" secondAttribute="top" id="C7O-Zr-6VP"/>
                     <constraint firstAttribute="trailing" secondItem="9I7-u9-vEQ" secondAttribute="trailing" id="S9W-mP-mXh"/>

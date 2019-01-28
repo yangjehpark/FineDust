@@ -17,6 +17,7 @@ class FDCurrentOtherStateCollectionCell: FDCurrentCollectionCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        titleLabel.adjustsFontSizeToFitWidth = true
     }
     
     override func setup(data: FDData?) {

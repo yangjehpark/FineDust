@@ -22,6 +22,7 @@ class FDCurrentOtherStateCell: FDCurrentTableCell {
         
         mainCollectoinView.dataSource = self
         mainCollectoinView.fdRegisterCell(FDCurrentOtherStateCollectionCell.self)
+        mainCollectoinView.contentInset = UIEdgeInsets(top: 0, left: 40, bottom: 0, right: 0)
     }
     
     override func setup(data: FDData?) {
