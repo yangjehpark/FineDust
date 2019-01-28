@@ -32,6 +32,8 @@ class FDData {
     var pointName: String?
     /// 측정소 주소 (by kakao API)
     var localizedAddressName: String?
+    /// 공헌 소스
+    var attributions: [String]?
     
     convenience init(_ data: AQIData) {
         self.init()
@@ -46,6 +48,9 @@ class FDData {
         no2 = data.aqiInfo?.so2
         measureTime = data.time?.measureTime
         pointName = data.city?.name
+        attributions = data.attributions?.compactMap({ (attribution) -> String? in
+            return attribution.name
+        })
     }
     
     convenience init(_ data: AKData) {

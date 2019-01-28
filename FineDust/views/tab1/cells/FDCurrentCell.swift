@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FDCurrentCell: UITableViewCell {
+class FDCurrentTableCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -16,14 +16,17 @@ class FDCurrentCell: UITableViewCell {
     }
     
     func setup(data: FDData?) {
-        changeFontColor(AQIStandards.getLevelFontColor(AQIStandards.getLevel(data?.mainIndex)))
+        changeSublabelsFontColor(self.subviews, AQIStandards.getLevelFontColor(AQIStandards.getLevel(data?.mainIndex)))
+    }
+}
+
+class FDCurrentCollectionCell: UICollectionViewCell {
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
     }
     
-    func changeFontColor(_ color: UIColor) {
-        for subview in self.subviews {
-            if subview.isKind(of: UILabel.self) {
-                (subview as! UILabel).textColor = color
-            }
-        }
+    func setup(data: FDData?) {
+        changeSublabelsFontColor(self.subviews, AQIStandards.getLevelFontColor(AQIStandards.getLevel(data?.mainIndex)))
     }
 }

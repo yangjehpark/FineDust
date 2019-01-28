@@ -123,12 +123,15 @@ extension FDCurrentViewController: UITableViewDelegate, UITableViewDataSource {
         switch section {
         case Section.CurrentState.rawValue:
             let header = tableView.fdDequeueHeaderFooterView(FDCurrentStandardColorHeader.self)
+            header?.setup(data: data)
             return header
         case Section.CurrentOtherState.rawValue:
             let header = tableView.fdDequeueHeaderFooterView(FDCurrentOtherStateHeader.self)
+            header?.setup(data: data)
             return header
         case Section.CurrentInfomation.rawValue:
             let header = tableView.fdDequeueHeaderFooterView(FDCurrentInfomationHeader.self)
+            header?.setup(data: data)
             return header
         default:
             return UIView()

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FDCurrentOtherStateCollectionCell: UICollectionViewCell {
+class FDCurrentOtherStateCollectionCell: FDCurrentCollectionCell {
     
     static let defaultSize = CGSize(width: 60, height: 80)
     
@@ -17,6 +17,10 @@ class FDCurrentOtherStateCollectionCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+    }
+    
+    override func setup(data: FDData?) {
+        super.setup(data: data)
     }
     
     func setup(title:String, value:Double) {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FDCurrentInfomationCell: FDCurrentCell {
+class FDCurrentInfomationCell: FDCurrentTableCell {
  
     static let defaultHeight: CGFloat = UITableViewAutomaticDimension
     
@@ -19,19 +19,16 @@ class FDCurrentInfomationCell: FDCurrentCell {
     }
     
     override func setup(data: FDData?) {
-        /*
+        super.setup(data: data)
+
         guard let attributions = data?.attributions else {
             return
         }
         
         var text = ""
         for attribution in attributions {
-            if attribution.name != nil {
-                text = text + "- " + attribution.name! + "\n"
-            }
+            text += "- " + attribution + "\n"
         }
         contentLabel.text = text
-         */
-        contentLabel.text = " "
     }
 }

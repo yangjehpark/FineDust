@@ -54,6 +54,8 @@
 		0439649121F761F400CAED52 /* VerticalStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0439649021F761F400CAED52 /* VerticalStepper.swift */; };
 		0439649321FDBFE500CAED52 /* ScreenshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0439649221FDBFE500CAED52 /* ScreenshotHelper.swift */; };
 		0439649521FDDFB300CAED52 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0439649421FDDFB300CAED52 /* AlertHelper.swift */; };
+		0439649821FF3A8400CAED52 /* FDCurrentHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0439649721FF3A8400CAED52 /* FDCurrentHeaderView.swift */; };
+		0439649A21FF3B8600CAED52 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0439649921FF3B8600CAED52 /* UIView.swift */; };
 		0448008B20C901FC005E1D68 /* FDAddAreaSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448008A20C901FC005E1D68 /* FDAddAreaSearchCell.swift */; };
 		0448008D20C90212005E1D68 /* FDAddAreaSearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0448008C20C90212005E1D68 /* FDAddAreaSearchCell.xib */; };
 		0448009020C913D2005E1D68 /* FDEditAreaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448008F20C913D2005E1D68 /* FDEditAreaViewController.swift */; };
@@ -164,6 +166,8 @@
 		0439649021F761F400CAED52 /* VerticalStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalStepper.swift; sourceTree = "<group>"; };
 		0439649221FDBFE500CAED52 /* ScreenshotHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotHelper.swift; sourceTree = "<group>"; };
 		0439649421FDDFB300CAED52 /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
+		0439649721FF3A8400CAED52 /* FDCurrentHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDCurrentHeaderView.swift; sourceTree = "<group>"; };
+		0439649921FF3B8600CAED52 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		0448008A20C901FC005E1D68 /* FDAddAreaSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDAddAreaSearchCell.swift; sourceTree = "<group>"; };
 		0448008C20C90212005E1D68 /* FDAddAreaSearchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FDAddAreaSearchCell.xib; sourceTree = "<group>"; };
 		0448008F20C913D2005E1D68 /* FDEditAreaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDEditAreaViewController.swift; sourceTree = "<group>"; };
@@ -417,6 +421,7 @@
 		0426986C20A58C66001735F5 /* headers */ = {
 			isa = PBXGroup;
 			children = (
+				0439649721FF3A8400CAED52 /* FDCurrentHeaderView.swift */,
 				04048BC220AAC3E000BD525A /* FDCurrentStandardColorHeader.swift */,
 				04048BC420AAC3EC00BD525A /* FDCurrentStandardColorHeader.xib */,
 				0426986D20A58C77001735F5 /* FDCurrentOtherStateHeader.swift */,
@@ -481,6 +486,7 @@
 				04C072BF209AB9B8007F7017 /* UIColor.swift */,
 				04C072C4209AB9B9007F7017 /* UITableView.swift */,
 				04C072C1209AB9B8007F7017 /* UIViewController.swift */,
+				0439649921FF3B8600CAED52 /* UIView.swift */,
 				04048BD220AD719300BD525A /* Double.swift */,
 			);
 			path = extensions;
@@ -746,6 +752,7 @@
 				04C072CB209AB9B9007F7017 /* UIBarButtonItem.swift in Sources */,
 				04C072C7209AB9B9007F7017 /* UIColor.swift in Sources */,
 				04932B1F20A5B970006E5907 /* AirQualityStandards.swift in Sources */,
+				0439649821FF3A8400CAED52 /* FDCurrentHeaderView.swift in Sources */,
 				04C072B9209AB61C007F7017 /* Constants.swift in Sources */,
 				04C072D5209BF8E6007F7017 /* JSONable.swift in Sources */,
 				04C3A0C920A19966000D3583 /* FDMenuViewController.swift in Sources */,
@@ -776,6 +783,7 @@
 				04C072BB209AB66D007F7017 /* AQIAPIs.swift in Sources */,
 				04048BBA20AA79AE00BD525A /* FDCurrentADCell.swift in Sources */,
 				0439649321FDBFE500CAED52 /* ScreenshotHelper.swift in Sources */,
+				0439649A21FF3B8600CAED52 /* UIView.swift in Sources */,
 				0426984E20A538B9001735F5 /* FDCurrentStateCell.swift in Sources */,
 				0426986620A57D37001735F5 /* FDCurrentCell.swift in Sources */,
 				04048BD120AD6DCE00BD525A /* KakaoAPI.swift in Sources */,

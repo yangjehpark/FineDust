@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FDCurrentStateCell: FDCurrentCell {
+class FDCurrentStateCell: FDCurrentTableCell {
 
     static let defaultHeight: CGFloat = UITableViewAutomaticDimension
     
@@ -25,6 +25,7 @@ class FDCurrentStateCell: FDCurrentCell {
     }
     
     override func setup(data: FDData?) {
+        super.setup(data: data)
         locationLabel?.text = data?.localizedAddressName ?? data?.pointName
         let level = AQIStandards.getLevel(data?.mainIndex)
         stateEmojiLabel?.text = AQIStandards.Level.emoji(level)

@@ -101,27 +101,27 @@ class AQIStandards {
         case .Unknown:
             return .white
         case .Perfect:
-            return UIColor(r: 64, g: 148, b: 255)
+            return UIColor(r: 0, g: 101, b: 107) // Deep Lake
         case .Good:
-            return UIColor(r: 64, g: 148, b: 104)
+            return UIColor(r: 0, g: 124, b: 183) // Ibiza Blue
         case .Moderate:
-            return UIColor(r: 250, g: 218, b: 90)
+            return UIColor(r: 238, g: 109, b: 138) // Pink Lemonade
         case .Bad:
-            return UIColor(r: 242, g: 156, b: 75)
+            return UIColor(r: 213, g: 215, b: 23) // Sulphur Spring
         case .Unhealthy:
-            return UIColor(r: 189, g: 40, b: 57)
+            return UIColor(r: 255, g: 111, b: 97) // Living Coral
         case .Dangerous:
-            return UIColor(r: 92, g: 26, b: 145)
+            return UIColor(r: 125, g: 93, b: 153) // Chive Blossom
         case .Hazardous:
-            return UIColor(r: 115, g: 21, b: 36)
+            return UIColor(r: 163, g: 40, b: 87) // Vivacious
         }
     }
     
     static func getLevelFontColor(_ level: AQIStandards.Level) -> UIColor {
         switch level {
-        case .Unknown, .Moderate, .Bad:
+        case .Unknown:
             return .black
-        case .Perfect, .Good, .Unhealthy, .Dangerous, .Hazardous:
+        default:
             return .white
         }
     }

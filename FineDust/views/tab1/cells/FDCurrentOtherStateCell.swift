@@ -8,13 +8,14 @@
 
 import UIKit
 
-class FDCurrentOtherStateCell: FDCurrentCell {
+class FDCurrentOtherStateCell: FDCurrentTableCell {
     
     static let defaultHeight: CGFloat = FDCurrentOtherStateCollectionCell.defaultSize.height
     
     @IBOutlet weak var mainCollectoinView: UICollectionView!
     typealias Info = (title:String, value:Double)
     private var infoList = [Info]()
+    private var data = FDData()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,9 +25,11 @@ class FDCurrentOtherStateCell: FDCurrentCell {
     }
     
     override func setup(data: FDData?) {
+        super.setup(data: data)
         guard let data = data else {
             return
         }
+        self.data = data
         
         infoList.removeAll()
         
@@ -64,6 +67,7 @@ extension FDCurrentOtherStateCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.fdDequeueCell(FDCurrentOtherStateCollectionCell.self, indexPath)
+        cell.setup(data: data)
         cell.setup(title: infoList[indexPath.item].title, value: infoList[indexPath.item].value)
         return cell
     }

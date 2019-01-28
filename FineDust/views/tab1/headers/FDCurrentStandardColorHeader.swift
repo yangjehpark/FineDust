@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FDCurrentStandardColorHeader: UITableViewHeaderFooterView {
+class FDCurrentStandardColorHeader: FDCurrentHeaderView {
     
     static let defaultHeight: CGFloat = 10
     

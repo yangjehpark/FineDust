@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FDCurrentInfomationHeader: UITableViewHeaderFooterView {
+class FDCurrentInfomationHeader: FDCurrentHeaderView {
  
     static let defaultHeight: CGFloat = 50
 }
