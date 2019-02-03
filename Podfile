@@ -14,6 +14,7 @@ target 'FineDust' do
     pod 'PagingView', '= 0.5.1'
     pod 'BWWalkthrough', '= 2.1.2'
     pod 'CryptoSwift', '= 0.13.1'
+    pod 'GIFGenerator'
 
 end
 
@@ -31,6 +32,11 @@ post_install do |installer|
         if target.name == 'BWWalkthrough'
             target.build_configurations.each do |config|
                 config.build_settings['SWIFT_VERSION'] = '4.0'
+            end
+        end
+        if target.name == 'GIFGenerator'
+            target.build_configurations.each do |config|
+                config.build_settings['SWIFT_VERSION'] = '3.0'
             end
         end
     end

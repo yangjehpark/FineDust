@@ -472,3 +472,13 @@ Pods/Target Support Files/SideMenu/SideMenu-prefix.pch
 Pods/Target Support Files/SideMenu/SideMenu-umbrella.h
 Pods/Target Support Files/SideMenu/SideMenu.modulemap
 Pods/Target Support Files/SideMenu/SideMenu.xcconfig
+Pods/GIFGenerator/LICENSE
+Pods/GIFGenerator/README.md
+Pods/GIFGenerator/Pod/Classes/GIFGenerator.swift
+Pods/Pods.xcodeproj/xcuserdata/yangjehpark.xcuserdatad/xcschemes/GIFGenerator.xcscheme
+Pods/Target Support Files/GIFGenerator/GIFGenerator-dummy.m
+Pods/Target Support Files/GIFGenerator/GIFGenerator-prefix.pch
+Pods/Target Support Files/GIFGenerator/GIFGenerator-umbrella.h
+Pods/Target Support Files/GIFGenerator/GIFGenerator.modulemap
+Pods/Target Support Files/GIFGenerator/GIFGenerator.xcconfig
+Pods/Target Support Files/GIFGenerator/Info.plist

@@ -68,10 +68,13 @@ class FDMapViewController: UIViewController {
     }
     
     @IBAction func shareButtonPressed() {
-        if let screenshot = ScreenshotHelper.takeScreenshot(tagetView: mapBackgroundView) {
-            print("shareButtonPressed success")
-        } else {
-            print("shareButtonPressed fail")
+        showIndicator()
+        ScreenshotHelper.takeGIF(targetView: mapBackgroundView) { (gifURL: URL?) in
+            self.hideIndicator()
+            if let gifURL = gifURL {
+                // TODO: send to share
+                ScreenshotHelper.cleanGIF()
+            }
         }
     }
     
