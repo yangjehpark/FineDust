@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="None" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Zf-ea-KTr">
-                        <rect key="frame" x="40" y="20" width="315" height="45.5"/>
+                        <rect key="frame" x="40" y="10" width="315" height="55.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -30,7 +30,7 @@
                     <constraint firstAttribute="bottom" secondItem="1Zf-ea-KTr" secondAttribute="bottom" constant="20" id="0vJ-aJ-LGW"/>
                     <constraint firstAttribute="trailing" secondItem="1Zf-ea-KTr" secondAttribute="trailing" constant="20" id="2vg-sl-TTz"/>
                     <constraint firstItem="1Zf-ea-KTr" firstAttribute="leading" secondItem="6OQ-LB-4N0" secondAttribute="leading" constant="40" id="4pE-EB-uAz"/>
-                    <constraint firstItem="1Zf-ea-KTr" firstAttribute="top" secondItem="6OQ-LB-4N0" secondAttribute="top" constant="20" id="XmQ-OG-ZkY"/>
+                    <constraint firstItem="1Zf-ea-KTr" firstAttribute="top" secondItem="6OQ-LB-4N0" secondAttribute="top" constant="10" id="XmQ-OG-ZkY"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
