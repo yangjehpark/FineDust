@@ -10,7 +10,7 @@ import UIKit
 
 class ScreenshotHelper {
     
-    static func takeScreenshot(tagetView: UIView?, _ shouldSave: Bool = true) -> UIImage? {
+    static func takeScreenshot(tagetView: UIView?) -> UIImage? {
         var screenshotImage: UIImage?
         var layer: CALayer
         if let targetLayer = tagetView?.layer {
@@ -23,9 +23,6 @@ class ScreenshotHelper {
         layer.render(in:context)
         screenshotImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        if let image = screenshotImage, shouldSave {
-            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-        }
         return screenshotImage
     }
 }
