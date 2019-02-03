@@ -20,6 +20,11 @@ class FDCurrentViewController: UIViewController {
     
     @IBOutlet weak var mainTableView: UITableView!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        title = "now".localized
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         

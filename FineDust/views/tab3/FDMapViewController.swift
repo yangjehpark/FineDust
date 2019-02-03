@@ -42,6 +42,11 @@ class FDMapViewController: UIViewController {
         }
     }
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        title = "satellite".localized
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
