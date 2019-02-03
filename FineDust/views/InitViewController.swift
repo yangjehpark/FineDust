@@ -54,8 +54,7 @@ class InitViewController: UIViewController {
                             })
                         }
                 })
-
-                print(Bundle.main.localizations)
+                log("\(Bundle.main.localizations)")
                 switch Locale.current.languageCode {
                 case "ko":
                     KakaoAPI.getAddressName(parameter: KakaoParameters.Geo(lat: geo.latitude, lng: geo.longitude), completionHandler: { (response: KakaoAddressNameResponse?) in

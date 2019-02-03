@@ -42,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         let token = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
-        print("apns token = \(token)")
+        log("apns token = \(token)")
     }
 }
 
@@ -52,16 +52,16 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         let title = notification.request.content.title
         let body = notification.request.content.body
         let badge = notification.request.content.badge != nil ? "\(notification.request.content.badge!)" :  "?"
-        print("willPresent\n\(title)\n\(body)\n\(badge)")
+        log("willPresent\n\(title)\n\(body)\n\(badge)")
         completionHandler([.alert, .sound, .badge])
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        print("didReceive")
+        log("didReceive")
         completionHandler()
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, openSettingsFor notification: UNNotification?) {
-        print("openSettingsFor")
+        log("openSettingsFor")
     }
 }

@@ -87,7 +87,7 @@ class FDMapViewController: UIViewController {
             let urlString: String = "https://www.airvisual.com/earth#current/wind/surface/level/orthographic=\(geo.longitude),\(geo.latitude),\(self.zLevels[self.zIndex])"
             self.adjustHereImageViewWidth()
             self.mainWebView.load(URLRequest(url: URL(string: urlString)!))
-            print(urlString)
+            log(urlString)
         }
     }
 }
@@ -176,8 +176,6 @@ extension FDMapViewController {
     func adjustHereImageViewWidth() {
         let value = zLevels[zIndex]
         let width = CGFloat(value/100)
-        print(value)
-        print(width)
         hereImageViewWidth.constant = width
     }
 }
