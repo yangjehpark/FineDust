@@ -64,6 +64,7 @@ class FDMapViewController: FDViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         topNavigationItem?.title = "satellite".localized
+        hideHereImage()
     }
     
     @IBAction func reloadData() {
@@ -87,7 +88,6 @@ class FDMapViewController: FDViewController {
     }
     
     private func load() {
-        loadStart()
         GeoManager.shared.getCurrentLocation { (geo) in
             guard let geo = geo else {
                 self.loadFail()
@@ -104,7 +104,7 @@ class FDMapViewController: FDViewController {
 extension FDMapViewController: WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
-        //loadStart()
+        loadStart()
     }
     
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
