@@ -27,6 +27,9 @@ class FDMapViewController: FDViewController {
         }
     }
     private var indicator: NVActivityIndicatorView?
+    enum IndicatorType {
+        case loading, sharing
+    }
     
     /// if value is larger, then area looks larger
     let zLevels = [4000, 2000, 1000, 500]
@@ -68,17 +71,23 @@ class FDMapViewController: FDViewController {
     }
     
     @IBAction func shareButtonPressed() {
-        showIndicator()
-        ScreenshotHelper.takeGIF(targetView: mapBackgroundView) { (gifURL: URL?) in
+        showIndicator(.sharing)
+        ScreenshotHelper.takeGIF(targetView: mapBackgroundView) { (gifData: Data?, gifLocalURL: URL?) in
             self.hideIndicator()
-            if let gifURL = gifURL {
-                // TODO: send to share
-                ScreenshotHelper.cleanGIF()
+            if let url = gifLocalURL {
+                let activityItem: [AnyObject] = [url as AnyObject]
+                let avc = UIActivityViewController(activityItems: activityItem, applicationActivities: nil)
+                DispatchQueue.main.async {
+                    ViewControllerHelper.topViewController()?.present(avc, animated: true, completion: nil)
+                }
+            } else {
+                log("no url")
             }
         }
     }
     
     private func load() {
+        loadStart()
         GeoManager.shared.getCurrentLocation { (geo) in
             guard let geo = geo else {
                 self.loadFail()
@@ -95,7 +104,7 @@ class FDMapViewController: FDViewController {
 extension FDMapViewController: WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
-        loadStart()
+        //loadStart()
     }
     
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
@@ -120,28 +129,36 @@ extension FDMapViewController {
     }
     
     private func loadStart() {
-        showIndicator()
+        showIndicator(.loading)
         showProgressView()
         hideHereImage()
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
     }
     
     private func loadFail() {
         hideIndicator()
         hideProgressView()
         hideHereImage()
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
     
     private func loadComplete() {
         hideIndicator()
         hideProgressView()
         showHereImage()
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
 }
 
 extension FDMapViewController: NVActivityIndicatorViewable {
     
-    func showIndicator() {
-        startAnimating(CGSize(width: 100, height: 100), message: "Loading", messageFont: .boldSystemFont(ofSize: 20), type: .ballScaleRippleMultiple, color: .white, padding: nil, displayTimeThreshold: nil, minimumDisplayTime: 1, backgroundColor: .clear, textColor: .white)
+    func showIndicator(_ type: IndicatorType) {
+        switch type {
+        case .loading:
+            startAnimating(CGSize(width: 100, height: 100), message: "Loading", messageFont: .boldSystemFont(ofSize: 20), type: .ballScaleRippleMultiple, color: .white, padding: nil, displayTimeThreshold: nil, minimumDisplayTime: 1, backgroundColor: .clear, textColor: .white)
+        case .sharing:
+            startAnimating(CGSize(width: 100, height: 100), message: "Preparing", messageFont: .boldSystemFont(ofSize: 20), type: .ballScaleMultiple, color: .white, padding: nil, displayTimeThreshold: nil, minimumDisplayTime: 1, backgroundColor: .clear, textColor: .white)
+        }
     }
     
     func hideIndicator() {
@@ -179,7 +196,6 @@ extension FDMapViewController {
         hereImageViewWidth.constant = width
     }
 }
-
 
 extension FDMapViewController {
     

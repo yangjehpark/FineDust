@@ -55,7 +55,7 @@ class ScreenshotHelper {
         return URL(fileURLWithPath: documentsPath + "/imageAnimated.gif")
     }
     
-    static func takeGIF(targetView: UIView, completionHandler: @escaping (_ gifURL: URL?) -> Void) {
+    static func takeGIF(targetView: UIView, completionHandler: @escaping (_ gifData:Data?, _ gifURL: URL?) -> Void) {
         var screenshotArray = [UIImage]()
         let blinker = Timer.scheduledTimer(withTimeInterval: 0.25, repeats: true) { timer in
             if let result = takeScreenshot(targetView: targetView) {
@@ -67,9 +67,9 @@ class ScreenshotHelper {
             blinker.invalidate()
             GifGenerator().generateGifFromImages(imagesArray: screenshotArray, frameDelay: 0.25, destinationURL: gifDestinationURL, callback: { (data:Data?, error:NSError?) in
                 if data != nil, error == nil {
-                    completionHandler(gifDestinationURL)
+                    completionHandler(data!, gifDestinationURL)
                 } else {
-                    completionHandler(nil)
+                    completionHandler(nil, nil)
                 }
             })
         }
