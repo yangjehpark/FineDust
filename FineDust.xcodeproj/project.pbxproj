@@ -41,7 +41,7 @@
 		0426986020A572B2001735F5 /* FDCurrentOtherStateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0426985F20A572B2001735F5 /* FDCurrentOtherStateCell.xib */; };
 		0426986220A573D5001735F5 /* FDCurrentInfomationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0426986120A573D5001735F5 /* FDCurrentInfomationCell.swift */; };
 		0426986420A573E3001735F5 /* FDCurrentInfomationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0426986320A573E3001735F5 /* FDCurrentInfomationCell.xib */; };
-		0426986620A57D37001735F5 /* FDCurrentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0426986520A57D37001735F5 /* FDCurrentCell.swift */; };
+		0426986620A57D37001735F5 /* FDCurrentTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0426986520A57D37001735F5 /* FDCurrentTableCell.swift */; };
 		0426986920A5886D001735F5 /* FDCurrentOtherStateCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0426986820A5886D001735F5 /* FDCurrentOtherStateCollectionCell.xib */; };
 		0426986B20A58873001735F5 /* FDCurrentOtherStateCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0426986A20A58873001735F5 /* FDCurrentOtherStateCollectionCell.swift */; };
 		0426986E20A58C77001735F5 /* FDCurrentOtherStateHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0426986D20A58C77001735F5 /* FDCurrentOtherStateHeader.swift */; };
@@ -163,7 +163,7 @@
 		0426985F20A572B2001735F5 /* FDCurrentOtherStateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FDCurrentOtherStateCell.xib; sourceTree = "<group>"; };
 		0426986120A573D5001735F5 /* FDCurrentInfomationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDCurrentInfomationCell.swift; sourceTree = "<group>"; };
 		0426986320A573E3001735F5 /* FDCurrentInfomationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FDCurrentInfomationCell.xib; sourceTree = "<group>"; };
-		0426986520A57D37001735F5 /* FDCurrentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDCurrentCell.swift; sourceTree = "<group>"; };
+		0426986520A57D37001735F5 /* FDCurrentTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDCurrentTableCell.swift; sourceTree = "<group>"; };
 		0426986820A5886D001735F5 /* FDCurrentOtherStateCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FDCurrentOtherStateCollectionCell.xib; sourceTree = "<group>"; };
 		0426986A20A58873001735F5 /* FDCurrentOtherStateCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDCurrentOtherStateCollectionCell.swift; sourceTree = "<group>"; };
 		0426986D20A58C77001735F5 /* FDCurrentOtherStateHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDCurrentOtherStateHeader.swift; sourceTree = "<group>"; };
@@ -307,7 +307,7 @@
 				0402C6A22099A56200CE232B /* Main.storyboard */,
 				0402C6DD2099B1B400CE232B /* basics */,
 				0402C6D52099AFCE00CE232B /* drawer */,
-				04048BBD20AABE2700BD525A /* modal */,
+				04048BBD20AABE2700BD525A /* modals */,
 				0402C6E22099B55000CE232B /* tab1 */,
 				04CC317320A19F82009D5471 /* tab2 */,
 			);
@@ -384,13 +384,13 @@
 			path = tab1;
 			sourceTree = "<group>";
 		};
-		04048BBD20AABE2700BD525A /* modal */ = {
+		04048BBD20AABE2700BD525A /* modals */ = {
 			isa = PBXGroup;
 			children = (
 				045E38BF220AB40A0026B0DF /* select */,
 				0448008920C901E1005E1D68 /* add */,
 			);
-			path = modal;
+			path = modals;
 			sourceTree = "<group>";
 		};
 		04048BC620AACE5E00BD525A /* AK */ = {
@@ -416,7 +416,7 @@
 		0426985820A570B5001735F5 /* cells */ = {
 			isa = PBXGroup;
 			children = (
-				0426986520A57D37001735F5 /* FDCurrentCell.swift */,
+				0426986520A57D37001735F5 /* FDCurrentTableCell.swift */,
 				0426984D20A538B9001735F5 /* FDCurrentStateCell.swift */,
 				0426987520A5AF98001735F5 /* FDCurrentStateCell.xib */,
 				0426985D20A572AA001735F5 /* FDCurrentOtherStateCell.swift */,
@@ -839,7 +839,7 @@
 				0439649A21FF3B8600CAED52 /* UIView.swift in Sources */,
 				0426984E20A538B9001735F5 /* FDCurrentStateCell.swift in Sources */,
 				045E38AF220802F90026B0DF /* ShareHelper.swift in Sources */,
-				0426986620A57D37001735F5 /* FDCurrentCell.swift in Sources */,
+				0426986620A57D37001735F5 /* FDCurrentTableCell.swift in Sources */,
 				04048BD120AD6DCE00BD525A /* KakaoAPI.swift in Sources */,
 				0448008B20C901FC005E1D68 /* FDAddAreaSearchCell.swift in Sources */,
 				0448009020C913D2005E1D68 /* FDEditAreaViewController.swift in Sources */,

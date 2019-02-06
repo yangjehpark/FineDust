@@ -1,5 +1,5 @@
 //
-//  FDCurrentCell.swift
+//  FDCurrentTableCell.swift
 //  FineDust
 //
 //  Created by YangJehPark on 2018. 5. 11..
