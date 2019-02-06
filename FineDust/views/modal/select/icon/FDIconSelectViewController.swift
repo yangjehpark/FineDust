@@ -25,8 +25,8 @@ class FDIconSelectViewController: FDSelectTableViewController {
         editTableView.fdRegisterCell(FDIconSelectCell.self)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         editTableView.selectRow(at: IndexPath(row: 0, section: 0), animated: false, scrollPosition: .middle)
     }
 }

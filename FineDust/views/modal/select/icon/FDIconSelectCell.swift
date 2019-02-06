@@ -27,13 +27,13 @@ class FDIconSelectCell: UITableViewCell {
         mainCollectoinView.dataSource = self
         mainCollectoinView.delegate = self
         mainCollectoinView.fdRegisterCell(FDIconSelectCollectionCell.self)
-        mainCollectoinView.contentInset = UIEdgeInsets(top: 10, left: 40, bottom: 10, right: 0)
+        mainCollectoinView.contentInset = UIEdgeInsets(top: 0, left: 40, bottom: 0, right: 0)
     }
     
     func setup(icons: [UIImage]) {
         self.icons = icons
-        setSelectedBackgroundColor()
         mainCollectoinView.reloadData()
+        setSelectedBackgroundColor()
     }
     
     private func setSelectedBackgroundColor() {
@@ -54,7 +54,7 @@ extension FDIconSelectCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let icon = icons?[safe: indexPath.item] {
             let cell = collectionView.fdDequeueCell(FDIconSelectCollectionCell.self, indexPath)
-            cell.setup(icon)
+            cell.setup(icon, indexPath: indexPath, selected: self.isSelected)
             return cell
         } else {
             return UICollectionViewCell()
@@ -66,5 +66,13 @@ extension FDIconSelectCell: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return FDIconSelectCollectionCell.defaultSize
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
     }
 }
