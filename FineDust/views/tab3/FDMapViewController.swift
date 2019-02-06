@@ -10,7 +10,7 @@ import UIKit
 import NVActivityIndicatorView
 import WebKit
 
-class FDMapViewController: UIViewController {
+class FDMapViewController: FDViewController {
 
     @IBOutlet weak var topNavigationItem: UINavigationItem?
     @IBOutlet weak var mapBackgroundView: UIView!

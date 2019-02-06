@@ -8,12 +8,7 @@
 
 import UIKit
 
-class FDEditAreaViewController: UIViewController {
-    
-    @IBOutlet weak var editTableView: UITableView!
-    @IBOutlet weak var closeBarButtonItem: UIBarButtonItem!
-    
-    weak var superVC: UIViewController?
+class FDEditAreaViewController: FDSelectTableViewController {
     
     enum Section: Int {
         case current
@@ -29,8 +24,6 @@ class FDEditAreaViewController: UIViewController {
  
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tabBarController?.tabBar.isHidden = false
-        editTableView.reloadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -40,16 +33,8 @@ class FDEditAreaViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        if editTableView.isEditing {
-            editTableView.setEditing(false, animated: false)
-        }
     }
     
-    @IBAction func doneButtonPressed() {
-        dismiss(animated: true) {
-            
-        }
-    }
 }
 
 extension FDEditAreaViewController: UITableViewDataSource {

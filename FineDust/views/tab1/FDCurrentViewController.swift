@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FDCurrentViewController: UIViewController {
+class FDCurrentViewController: FDViewController {
     
     @IBOutlet weak var topNavigationItem: UINavigationItem?
 

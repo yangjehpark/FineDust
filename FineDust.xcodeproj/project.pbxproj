@@ -68,6 +68,14 @@
 		045E38AF220802F90026B0DF /* ShareHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E38AE220802F90026B0DF /* ShareHelper.swift */; };
 		045E38B7220806D80026B0DF /* KakaoCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 045E38B6220806D80026B0DF /* KakaoCommon.framework */; };
 		045E38B922080C310026B0DF /* KakaoMessageTemplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 045E38B822080C310026B0DF /* KakaoMessageTemplate.framework */; };
+		045E38BC220AB2A90026B0DF /* FDIconSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E38BB220AB2A90026B0DF /* FDIconSelectViewController.swift */; };
+		045E38BE220AB3470026B0DF /* FDIconSelectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045E38BD220AB3470026B0DF /* FDIconSelectView.xib */; };
+		045E38C1220AB4320026B0DF /* FDSelectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E38C0220AB4320026B0DF /* FDSelectTableViewController.swift */; };
+		045E38C5220AB6530026B0DF /* FDIconSelectCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E38C4220AB6530026B0DF /* FDIconSelectCollectionCell.swift */; };
+		045E38C7220AB6640026B0DF /* FDIconSelectCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045E38C6220AB6640026B0DF /* FDIconSelectCollectionCell.xib */; };
+		045E38C9220AB9620026B0DF /* FDIconSelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E38C8220AB9620026B0DF /* FDIconSelectCell.swift */; };
+		045E38CB220AB9AD0026B0DF /* FDIconSelectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045E38CA220AB9AD0026B0DF /* FDIconSelectCell.xib */; };
+		045E38CD220ABD160026B0DF /* IconHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E38CC220ABD160026B0DF /* IconHelper.swift */; };
 		0472C96520A2D53600D7E5A1 /* UserAreaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0472C96420A2D53600D7E5A1 /* UserAreaManager.swift */; };
 		04932B1F20A5B970006E5907 /* AirQualityStandards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04932B1E20A5B970006E5907 /* AirQualityStandards.swift */; };
 		04C072B9209AB61C007F7017 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C072B8209AB61C007F7017 /* Constants.swift */; };
@@ -187,6 +195,14 @@
 		045E38AE220802F90026B0DF /* ShareHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareHelper.swift; sourceTree = "<group>"; };
 		045E38B6220806D80026B0DF /* KakaoCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoCommon.framework; sourceTree = "<group>"; };
 		045E38B822080C310026B0DF /* KakaoMessageTemplate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoMessageTemplate.framework; sourceTree = "<group>"; };
+		045E38BB220AB2A90026B0DF /* FDIconSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDIconSelectViewController.swift; sourceTree = "<group>"; };
+		045E38BD220AB3470026B0DF /* FDIconSelectView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FDIconSelectView.xib; sourceTree = "<group>"; };
+		045E38C0220AB4320026B0DF /* FDSelectTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDSelectTableViewController.swift; sourceTree = "<group>"; };
+		045E38C4220AB6530026B0DF /* FDIconSelectCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDIconSelectCollectionCell.swift; sourceTree = "<group>"; };
+		045E38C6220AB6640026B0DF /* FDIconSelectCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FDIconSelectCollectionCell.xib; sourceTree = "<group>"; };
+		045E38C8220AB9620026B0DF /* FDIconSelectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDIconSelectCell.swift; sourceTree = "<group>"; };
+		045E38CA220AB9AD0026B0DF /* FDIconSelectCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FDIconSelectCell.xib; sourceTree = "<group>"; };
+		045E38CC220ABD160026B0DF /* IconHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconHelper.swift; sourceTree = "<group>"; };
 		0472C96420A2D53600D7E5A1 /* UserAreaManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAreaManager.swift; sourceTree = "<group>"; };
 		04932B1E20A5B970006E5907 /* AirQualityStandards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityStandards.swift; sourceTree = "<group>"; };
 		04BBF38120A928ED00385C5E /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
@@ -371,7 +387,7 @@
 		04048BBD20AABE2700BD525A /* modal */ = {
 			isa = PBXGroup;
 			children = (
-				0448008E20C913B9005E1D68 /* edit */,
+				045E38BF220AB40A0026B0DF /* select */,
 				0448008920C901E1005E1D68 /* add */,
 			);
 			path = modal;
@@ -444,6 +460,7 @@
 				0402C6CB2099AE2600CE232B /* ViewControllerHelper.swift */,
 				0439649221FDBFE500CAED52 /* ScreenshotHelper.swift */,
 				045E38AE220802F90026B0DF /* ShareHelper.swift */,
+				045E38CC220ABD160026B0DF /* IconHelper.swift */,
 			);
 			path = helpers;
 			sourceTree = "<group>";
@@ -478,6 +495,29 @@
 				045B2D2321C88D4C00BAA4B7 /* Info.plist */,
 			);
 			path = NotiEx;
+			sourceTree = "<group>";
+		};
+		045E38BA220AB2930026B0DF /* icon */ = {
+			isa = PBXGroup;
+			children = (
+				045E38BB220AB2A90026B0DF /* FDIconSelectViewController.swift */,
+				045E38BD220AB3470026B0DF /* FDIconSelectView.xib */,
+				045E38C8220AB9620026B0DF /* FDIconSelectCell.swift */,
+				045E38CA220AB9AD0026B0DF /* FDIconSelectCell.xib */,
+				045E38C4220AB6530026B0DF /* FDIconSelectCollectionCell.swift */,
+				045E38C6220AB6640026B0DF /* FDIconSelectCollectionCell.xib */,
+			);
+			path = icon;
+			sourceTree = "<group>";
+		};
+		045E38BF220AB40A0026B0DF /* select */ = {
+			isa = PBXGroup;
+			children = (
+				045E38C0220AB4320026B0DF /* FDSelectTableViewController.swift */,
+				045E38BA220AB2930026B0DF /* icon */,
+				0448008E20C913B9005E1D68 /* edit */,
+			);
+			path = select;
 			sourceTree = "<group>";
 		};
 		04C072BC209AB99A007F7017 /* extensions */ = {
@@ -649,12 +689,15 @@
 				04048BC120AABE5F00BD525A /* FDAddAreaView.xib in Resources */,
 				0448008D20C90212005E1D68 /* FDAddAreaSearchCell.xib in Resources */,
 				04048BBC20AA79BC00BD525A /* FDCurrentADCell.xib in Resources */,
+				045E38BE220AB3470026B0DF /* FDIconSelectView.xib in Resources */,
 				0426986420A573E3001735F5 /* FDCurrentInfomationCell.xib in Resources */,
 				0402C6A62099A56200CE232B /* Assets.xcassets in Resources */,
 				0448009620C91624005E1D68 /* FDEditAreaCell.xib in Resources */,
 				0402C6A42099A56200CE232B /* Main.storyboard in Resources */,
 				0448009220C913FB005E1D68 /* FDEditAreaView.xib in Resources */,
+				045E38CB220AB9AD0026B0DF /* FDIconSelectCell.xib in Resources */,
 				04048BC520AAC3EC00BD525A /* FDCurrentStandardColorHeader.xib in Resources */,
+				045E38C7220AB6640026B0DF /* FDIconSelectCollectionCell.xib in Resources */,
 				0426987020A58C83001735F5 /* FDCurrentOtherStateHeader.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -766,6 +809,7 @@
 				0402C6E12099B32000CE232B /* Utils.swift in Sources */,
 				0402C6A12099A56200CE232B /* FDMapViewController.swift in Sources */,
 				0426986E20A58C77001735F5 /* FDCurrentOtherStateHeader.swift in Sources */,
+				045E38C1220AB4320026B0DF /* FDSelectTableViewController.swift in Sources */,
 				0402C6C82099AB1300CE232B /* FDViewController.swift in Sources */,
 				04C072CA209AB9B9007F7017 /* String.swift in Sources */,
 				04C072C9209AB9B9007F7017 /* UIViewController.swift in Sources */,
@@ -779,6 +823,8 @@
 				04C072C5209AB9B9007F7017 /* UIButton.swift in Sources */,
 				0402C6DF2099B2E300CE232B /* FDNavigationController.swift in Sources */,
 				0402C69D2099A56200CE232B /* AppDelegate.swift in Sources */,
+				045E38C9220AB9620026B0DF /* FDIconSelectCell.swift in Sources */,
+				045E38C5220AB6530026B0DF /* FDIconSelectCollectionCell.swift in Sources */,
 				04CC317220A19CFE009D5471 /* FDMenuNavigationViewController.swift in Sources */,
 				0472C96520A2D53600D7E5A1 /* UserAreaManager.swift in Sources */,
 				0426985520A5659E001735F5 /* FDCurrentViewController.swift in Sources */,
@@ -801,6 +847,7 @@
 				04048BC320AAC3E000BD525A /* FDCurrentStandardColorHeader.swift in Sources */,
 				0402C6CA2099AB5000CE232B /* InitViewController.swift in Sources */,
 				0402C6CC2099AE2600CE232B /* ViewControllerHelper.swift in Sources */,
+				045E38BC220AB2A90026B0DF /* FDIconSelectViewController.swift in Sources */,
 				0448009420C9161A005E1D68 /* FDEditAreaCell.swift in Sources */,
 				04C072C6209AB9B9007F7017 /* NSObject.swift in Sources */,
 				04048BCC20AB277F00BD525A /* AKRequestParameters.swift in Sources */,
@@ -810,6 +857,7 @@
 				04048BBF20AABE3E00BD525A /* FDAddAreaViewController.swift in Sources */,
 				0402C6C42099AA6B00CE232B /* Models.swift in Sources */,
 				0426986B20A58873001735F5 /* FDCurrentOtherStateCollectionCell.swift in Sources */,
+				045E38CD220ABD160026B0DF /* IconHelper.swift in Sources */,
 				04E5C54B20A13BFA004284E0 /* FDTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
