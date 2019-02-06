@@ -63,13 +63,21 @@ class FDCurrentViewController: UIViewController {
     
     @IBAction func shareButtonPressed() {
         if let currentStateCellView = mainTableView.cellForRow(at: IndexPath(row: 0, section: Section.CurrentState.rawValue))?.contentView {
-            currentStateCellView.backgroundColor = AQIStandards.getLevelBackgroundColor(AQIStandards.getLevel(data?.mainIndex))
+            let level = AQIStandards.getLevel(data?.mainIndex)
+            currentStateCellView.backgroundColor = AQIStandards.getLevelBackgroundColor(level)
+            let levelString = AQIStandards.getLevelTitle(level)
+            let addressString = data?.localizedAddressName ?? data?.pointName
             if let screenshot = ScreenshotHelper.takeScreenshot(targetView: currentStateCellView) {
-                log("shareButtonPressed success")
-                return
+                ShareHelper.shareToKakaoLink(title: "AQI".localized+" : "+levelString, description: (addressString != nil ? "\n"+addressString! : ""), image: screenshot) { (error:Error?) in
+                    if let error = error {
+                        log(error.localizedDescription)
+                    } else {
+                        log("shareButtonPressed success")
+                        return
+                    }
+                }
             }
         }
-        log("shareButtonPressed fail")
     }
     
     @IBAction func reloadButtonPressed() {

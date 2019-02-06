@@ -32,3 +32,4 @@
 "Hazardous" = "Hazardous";
 "Help" = "Help";
 "HelpMessage" = "Followed by US-EPA air quality index.";
+"AQI" = "AQI level";

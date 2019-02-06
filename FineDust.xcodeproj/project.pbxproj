@@ -64,6 +64,10 @@
 		0448009620C91624005E1D68 /* FDEditAreaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0448009520C91624005E1D68 /* FDEditAreaCell.xib */; };
 		0448D12420BAAED60030FA2D /* KakaoRequestParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448D12320BAAED60030FA2D /* KakaoRequestParameters.swift */; };
 		0448D12620BAAEE20030FA2D /* KakaoResponseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448D12520BAAEE20030FA2D /* KakaoResponseModels.swift */; };
+		045E38AD2207FF810026B0DF /* KakaoLink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 045E38AC2207FF810026B0DF /* KakaoLink.framework */; };
+		045E38AF220802F90026B0DF /* ShareHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E38AE220802F90026B0DF /* ShareHelper.swift */; };
+		045E38B7220806D80026B0DF /* KakaoCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 045E38B6220806D80026B0DF /* KakaoCommon.framework */; };
+		045E38B922080C310026B0DF /* KakaoMessageTemplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 045E38B822080C310026B0DF /* KakaoMessageTemplate.framework */; };
 		0472C96520A2D53600D7E5A1 /* UserAreaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0472C96420A2D53600D7E5A1 /* UserAreaManager.swift */; };
 		04932B1F20A5B970006E5907 /* AirQualityStandards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04932B1E20A5B970006E5907 /* AirQualityStandards.swift */; };
 		04C072B9209AB61C007F7017 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C072B8209AB61C007F7017 /* Constants.swift */; };
@@ -176,15 +180,16 @@
 		0448009520C91624005E1D68 /* FDEditAreaCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FDEditAreaCell.xib; sourceTree = "<group>"; };
 		0448D12320BAAED60030FA2D /* KakaoRequestParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoRequestParameters.swift; sourceTree = "<group>"; };
 		0448D12520BAAEE20030FA2D /* KakaoResponseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoResponseModels.swift; sourceTree = "<group>"; };
-		045B2D1121C8813400BAA4B7 /* libPRTMCoordTrans.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPRTMCoordTrans.a; path = FineDust/utils/PRTMCoordTrans/libPRTMCoordTrans.a; sourceTree = "<group>"; };
-		045B2D1621C8816000BAA4B7 /* libPRTMCoordTrans_x86.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPRTMCoordTrans_x86.a; path = FineDust/utils/PRTMCoordTrans/libPRTMCoordTrans_x86.a; sourceTree = "<group>"; };
 		045B2D1A21C8825100BAA4B7 /* FineDust.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FineDust.entitlements; sourceTree = "<group>"; };
 		045B2D2121C88D4C00BAA4B7 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		045B2D2321C88D4C00BAA4B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		045B2D2A21C88E9C00BAA4B7 /* NotiEx.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NotiEx.entitlements; sourceTree = "<group>"; };
+		045E38AC2207FF810026B0DF /* KakaoLink.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoLink.framework; sourceTree = "<group>"; };
+		045E38AE220802F90026B0DF /* ShareHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareHelper.swift; sourceTree = "<group>"; };
+		045E38B6220806D80026B0DF /* KakaoCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoCommon.framework; sourceTree = "<group>"; };
+		045E38B822080C310026B0DF /* KakaoMessageTemplate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoMessageTemplate.framework; sourceTree = "<group>"; };
 		0472C96420A2D53600D7E5A1 /* UserAreaManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAreaManager.swift; sourceTree = "<group>"; };
 		04932B1E20A5B970006E5907 /* AirQualityStandards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityStandards.swift; sourceTree = "<group>"; };
-		04BBF37B20A9271800385C5E /* libProj4.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libProj4.a; path = FineDust/utils/PRTMCoordTrans/libProj4.a; sourceTree = "<group>"; };
 		04BBF38120A928ED00385C5E /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		04C072B8209AB61C007F7017 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		04C072BA209AB66D007F7017 /* AQIAPIs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AQIAPIs.swift; sourceTree = "<group>"; };
@@ -217,8 +222,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				045E38B922080C310026B0DF /* KakaoMessageTemplate.framework in Frameworks */,
 				04C072D7209C2EE7007F7017 /* CoreLocation.framework in Frameworks */,
+				045E38B7220806D80026B0DF /* KakaoCommon.framework in Frameworks */,
 				3A465A56E338F5E141A05AB1 /* Pods_FineDust.framework in Frameworks */,
+				045E38AD2207FF810026B0DF /* KakaoLink.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +446,7 @@
 				0439649421FDDFB300CAED52 /* AlertHelper.swift */,
 				0402C6CB2099AE2600CE232B /* ViewControllerHelper.swift */,
 				0439649221FDBFE500CAED52 /* ScreenshotHelper.swift */,
+				045E38AE220802F90026B0DF /* ShareHelper.swift */,
 			);
 			path = helpers;
 			sourceTree = "<group>";
@@ -515,9 +524,9 @@
 		4BD35ACF5BE165C9083FBE13 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				045B2D1621C8816000BAA4B7 /* libPRTMCoordTrans_x86.a */,
-				045B2D1121C8813400BAA4B7 /* libPRTMCoordTrans.a */,
-				04BBF37B20A9271800385C5E /* libProj4.a */,
+				045E38B822080C310026B0DF /* KakaoMessageTemplate.framework */,
+				045E38AC2207FF810026B0DF /* KakaoLink.framework */,
+				045E38B6220806D80026B0DF /* KakaoCommon.framework */,
 				04C072D6209C2EE7007F7017 /* CoreLocation.framework */,
 				FA595AFCCF215A6CCA84FD97 /* Pods_FineDust.framework */,
 				A106C015331CE3C766F1D8CB /* Pods_FineDustTests.framework */,
@@ -787,6 +796,7 @@
 				0439649321FDBFE500CAED52 /* ScreenshotHelper.swift in Sources */,
 				0439649A21FF3B8600CAED52 /* UIView.swift in Sources */,
 				0426984E20A538B9001735F5 /* FDCurrentStateCell.swift in Sources */,
+				045E38AF220802F90026B0DF /* ShareHelper.swift in Sources */,
 				0426986620A57D37001735F5 /* FDCurrentCell.swift in Sources */,
 				04048BD120AD6DCE00BD525A /* KakaoAPI.swift in Sources */,
 				0448008B20C901FC005E1D68 /* FDAddAreaSearchCell.swift in Sources */,
@@ -975,6 +985,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DEV3GQ9XHU;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = FineDust/apps/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1003,6 +1017,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DEV3GQ9XHU;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = FineDust/apps/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
