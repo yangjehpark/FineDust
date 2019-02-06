@@ -90,7 +90,6 @@
 		04CC317220A19CFE009D5471 /* FDMenuNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CC317120A19CFE009D5471 /* FDMenuNavigationViewController.swift */; };
 		04E5C54B20A13BFA004284E0 /* FDTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E5C54A20A13BFA004284E0 /* FDTabBarController.swift */; };
 		3A465A56E338F5E141A05AB1 /* Pods_FineDust.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA595AFCCF215A6CCA84FD97 /* Pods_FineDust.framework */; };
-		8EB61016D575CF568910BAFC /* Pods_FineDustTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A106C015331CE3C766F1D8CB /* Pods_FineDustTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -212,7 +211,6 @@
 		04E5C54A20A13BFA004284E0 /* FDTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDTabBarController.swift; sourceTree = "<group>"; };
 		14437D54E2C95A5A8A88282A /* Pods-FineDust.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FineDust.release.xcconfig"; path = "Pods/Target Support Files/Pods-FineDust/Pods-FineDust.release.xcconfig"; sourceTree = "<group>"; };
 		9D4E56F25FC87BD14E363378 /* Pods-FineDust.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FineDust.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FineDust/Pods-FineDust.debug.xcconfig"; sourceTree = "<group>"; };
-		A106C015331CE3C766F1D8CB /* Pods_FineDustTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FineDustTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA0516B20ABA01BFE77BABC4 /* Pods-FineDustTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FineDustTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FineDustTests/Pods-FineDustTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FA595AFCCF215A6CCA84FD97 /* Pods_FineDust.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FineDust.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -234,7 +232,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8EB61016D575CF568910BAFC /* Pods_FineDustTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -529,7 +526,6 @@
 				045E38B6220806D80026B0DF /* KakaoCommon.framework */,
 				04C072D6209C2EE7007F7017 /* CoreLocation.framework */,
 				FA595AFCCF215A6CCA84FD97 /* Pods_FineDust.framework */,
-				A106C015331CE3C766F1D8CB /* Pods_FineDustTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
