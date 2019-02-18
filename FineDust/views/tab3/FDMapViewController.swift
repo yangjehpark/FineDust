@@ -16,9 +16,8 @@ class FDMapViewController: FDViewController {
     @IBOutlet weak var mapBackgroundView: UIView!
     @IBOutlet weak var mainWebView: WKWebView!
     @IBOutlet weak var hereImageView: UIImageView!
-    @IBOutlet weak var hereImageViewWidth: NSLayoutConstraint!
+    @IBOutlet weak var hereButton: UIButton!
     @IBOutlet weak var progressView: UIView!
-    @IBOutlet weak var verticalStepper: VerticalStepper!
     private var webLoadProgress: Double = 0 {
         didSet {
             UIView.animate(withDuration: 0.25) {
@@ -31,20 +30,6 @@ class FDMapViewController: FDViewController {
         case loading, sharing
     }
     
-    /// if value is larger, then area looks larger
-    let zLevels = [4000, 2000, 1000, 500]
-    var zIndex: Int = 0 {
-        didSet {
-            let minimum = 0
-            let maximum = zLevels.count-1
-            if zIndex < minimum { zIndex = minimum }
-            if zIndex > maximum { zIndex = maximum }
-            if oldValue != zIndex {
-                reloadData()
-            }
-        }
-    }
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         title = "satellite".localized
@@ -53,11 +38,11 @@ class FDMapViewController: FDViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mainWebView.isUserInteractionEnabled = false
         mainWebView.navigationDelegate = self
+        mainWebView.scrollView.delegate = self
         
         addObserverOnProgress()
-        setVerticalStepper()
+        setupHereButton()
         load()
     }
     
@@ -65,10 +50,13 @@ class FDMapViewController: FDViewController {
         super.viewWillAppear(animated)
         topNavigationItem?.title = "satellite".localized
         hideHereImage()
+        hideHereButton()
     }
     
     @IBAction func reloadData() {
-        load()
+        showHereImage()
+        hideHereButton()
+        mainWebView.reload()
     }
     
     @IBAction func shareButtonPressed() {
@@ -87,14 +75,29 @@ class FDMapViewController: FDViewController {
         }
     }
     
+    @IBAction func hereButtonPressed() {
+        showHereImage()
+        hideHereButton()
+        mainWebView.reload()
+    }
+    
+    private func setupHereButton() {
+        hereButton.contentEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        hereButton.backgroundColor = UIColor.white.withAlphaComponent(0.5)
+        hereButton.layer.masksToBounds = true
+        hereButton.layer.cornerRadius = 5
+        hereButton.layer.borderColor = UIColor.white.cgColor
+        hereButton.layer.borderWidth = 1
+    }
+    
     private func load() {
         GeoManager.shared.getCurrentLocation { (geo) in
             guard let geo = geo else {
                 self.loadFail()
                 return
             }
-            let urlString: String = "https://www.airvisual.com/earth#current/wind/surface/level/orthographic=\(geo.longitude),\(geo.latitude),\(self.zLevels[self.zIndex])"
-            self.adjustHereImageViewWidth()
+            let zLevels = 4000
+            let urlString: String = "https://www.airvisual.com/earth#current/wind/surface/level/orthographic=\(geo.longitude),\(geo.latitude),\(zLevels)"
             self.mainWebView.load(URLRequest(url: URL(string: urlString)!))
             log(urlString)
         }
@@ -116,6 +119,19 @@ extension FDMapViewController: WKNavigationDelegate {
     }
 }
 
+extension FDMapViewController: UIScrollViewDelegate {
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        hideHereImage()
+        showHereButton()
+    }
+    
+    func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with view: UIView?) {
+        hideHereImage()
+        showHereButton()
+    }
+}
+
 extension FDMapViewController {
     
     func addObserverOnProgress() {
@@ -132,6 +148,7 @@ extension FDMapViewController {
         showIndicator(.loading)
         showProgressView()
         hideHereImage()
+        hideHereButton()
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
     }
     
@@ -139,6 +156,7 @@ extension FDMapViewController {
         hideIndicator()
         hideProgressView()
         hideHereImage()
+        hideHereButton()
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
     
@@ -146,6 +164,7 @@ extension FDMapViewController {
         hideIndicator()
         hideProgressView()
         showHereImage()
+        hideHereButton()
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
 }
@@ -179,9 +198,8 @@ extension FDMapViewController {
     }
 }
 
-
 extension FDMapViewController {
-    
+
     func showHereImage() {
         hereImageView.isHidden = false
     }
@@ -189,27 +207,12 @@ extension FDMapViewController {
     func hideHereImage() {
         hereImageView.isHidden = true
     }
-    
-    func adjustHereImageViewWidth() {
-        let value = zLevels[zIndex]
-        let width = CGFloat(value/100)
-        hereImageViewWidth.constant = width
-    }
-}
 
-extension FDMapViewController {
-    
-    func setVerticalStepper() {
-        verticalStepper.backgroundColor = .clear
-        verticalStepper.addTarget(self, action: #selector(verticalStepperIncresed), for: .increased)
-        verticalStepper.addTarget(self, action: #selector(verticalStepperDecresed), for: .decreased)
-    }
-
-    @objc func verticalStepperIncresed() {
-        zIndex -= 1
+    func showHereButton() {
+        hereButton.isHidden = false
     }
     
-    @objc func verticalStepperDecresed() {
-        zIndex += 1
+    func hideHereButton() {
+        hereButton.isHidden = true
     }
 }

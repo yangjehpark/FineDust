@@ -96,10 +96,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ck5-iq-vre">
                                 <rect key="frame" x="0.0" y="64" width="375" height="534"/>
                                 <subviews>
-                                    <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ef-oF-1Ma">
+                                    <wkWebView contentMode="scaleToFill" allowsLinkPreview="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ef-oF-1Ma">
                                         <rect key="frame" x="0.0" y="-44" width="375" height="578"/>
                                         <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <wkWebViewConfiguration key="configuration">
+                                        <wkWebViewConfiguration key="configuration" allowsAirPlayForMediaPlayback="NO">
+                                            <dataDetectorTypes key="dataDetectorTypes"/>
                                             <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                             <wkPreferences key="preferences"/>
                                         </wkWebViewConfiguration>
@@ -143,21 +144,23 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J7W-Rq-fOA">
                                 <rect key="frame" x="325" y="324" width="35" height="274"/>
                                 <subviews>
-                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NSQ-vP-gYr" customClass="VerticalStepper" customModule="FineDust" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="102" width="35" height="70"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mnH-mu-hli">
+                                        <rect key="frame" x="-2.5" y="117" width="40" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="35" id="7D5-Qr-jNV"/>
-                                            <constraint firstAttribute="height" constant="70" id="mhs-Fh-iyH"/>
+                                            <constraint firstAttribute="width" constant="40" id="YQ6-s5-eMq"/>
+                                            <constraint firstAttribute="height" constant="40" id="apx-h4-mgZ"/>
                                         </constraints>
-                                    </view>
+                                        <state key="normal" title="Button" image="map_here"/>
+                                        <connections>
+                                            <action selector="hereButtonPressed" destination="h5z-fg-W7a" eventType="touchUpInside" id="EQS-t0-dWL"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="NSQ-vP-gYr" firstAttribute="centerY" secondItem="J7W-Rq-fOA" secondAttribute="centerY" id="1oV-IQ-xiz"/>
-                                    <constraint firstAttribute="trailing" secondItem="NSQ-vP-gYr" secondAttribute="trailing" id="AAJ-Lx-55Y"/>
+                                    <constraint firstItem="mnH-mu-hli" firstAttribute="centerX" secondItem="J7W-Rq-fOA" secondAttribute="centerX" id="HT9-or-tzc"/>
                                     <constraint firstAttribute="width" constant="35" id="O8k-Nn-r7l"/>
-                                    <constraint firstItem="NSQ-vP-gYr" firstAttribute="leading" secondItem="J7W-Rq-fOA" secondAttribute="leading" id="foh-FX-9eb"/>
+                                    <constraint firstItem="mnH-mu-hli" firstAttribute="centerY" secondItem="J7W-Rq-fOA" secondAttribute="centerY" id="ulS-YJ-hWX"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OPn-vo-Mx1">
@@ -209,13 +212,12 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="satellite" id="V3O-cL-nc0"/>
                     <connections>
+                        <outlet property="hereButton" destination="mnH-mu-hli" id="ZHI-bu-jlq"/>
                         <outlet property="hereImageView" destination="GFY-aJ-dBr" id="Vlg-lN-8LU"/>
-                        <outlet property="hereImageViewWidth" destination="7aE-c2-xMt" id="ngC-qw-DvG"/>
                         <outlet property="mainWebView" destination="3Ef-oF-1Ma" id="2zD-tD-C7E"/>
                         <outlet property="mapBackgroundView" destination="ck5-iq-vre" id="xsF-UM-vX7"/>
                         <outlet property="progressView" destination="OPn-vo-Mx1" id="iXZ-x0-5wD"/>
                         <outlet property="topNavigationItem" destination="yM5-Mf-K28" id="WjT-9h-ddr"/>
-                        <outlet property="verticalStepper" destination="NSQ-vP-gYr" id="KmQ-x6-vrb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OMb-S3-7Ou" userLabel="First Responder" sceneMemberID="firstResponder"/>
