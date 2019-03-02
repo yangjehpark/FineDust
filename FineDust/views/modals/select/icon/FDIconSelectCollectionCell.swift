@@ -18,12 +18,16 @@ class FDIconSelectCollectionCell: UICollectionViewCell {
     }
 
     func setup(_ image: UIImage, indexPath: IndexPath, selected: Bool) {
-        DispatchQueue.main.async {
-            if let level = AQIStandards.Level.init(rawValue: indexPath.item+1) {
-                self.backgroundColor = AQIStandards.getLevelBackgroundColor(level)
-            }
-        }
         iconImageView.image = image
-        iconImageView.tintColor = selected ? .white : .black
+        if selected {
+            DispatchQueue.main.async {
+                if let level = AQIStandards.Level.init(rawValue: indexPath.item+1) {
+                    self.iconImageView.tintColor = AQIStandards.getLevelBackgroundColor(level)
+                }
+            }
+        } else {
+            iconImageView.tintColor = .black
+        }
+        
     }
 }

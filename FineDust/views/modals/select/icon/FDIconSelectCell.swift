@@ -8,39 +8,45 @@
 
 import UIKit
 
+protocol FDIconSelectCellDelegate {
+    func didSelectItemAt(_ indexPath: IndexPath?)
+}
+
 class FDIconSelectCell: UITableViewCell {
     
     static let defaultHeight: CGFloat = 100
     
     @IBOutlet weak var mainCollectoinView: UICollectionView!
-    private var icons: [UIImage]? {
+    var delegate: FDIconSelectCellDelegate?
+    var icons: [UIImage]? {
         didSet {
             icons?.removeFirst()
+            mainCollectoinView.reloadData()
         }
     }
+    
+    var cellIndexPath: IndexPath?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        selectionStyle = .gray
+        selectionStyle = .none
         
+        mainCollectoinView.allowsSelection = true
+        mainCollectoinView.allowsMultipleSelection = false
         mainCollectoinView.dataSource = self
         mainCollectoinView.delegate = self
         mainCollectoinView.fdRegisterCell(FDIconSelectCollectionCell.self)
-        mainCollectoinView.contentInset = UIEdgeInsets(top: 0, left: 40, bottom: 0, right: 0)
+        mainCollectoinView.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
     }
     
-    func setup(icons: [UIImage]) {
-        self.icons = icons
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
         mainCollectoinView.reloadData()
-        setSelectedBackgroundColor()
-    }
-    
-    private func setSelectedBackgroundColor() {
-        if let index = DataManager.shared.getCurrentAreaData()?.mainIndex {
-            let selectedBackgroundView = UIView()
-            selectedBackgroundView.backgroundColor = AQIStandards.getLevelBackgroundColor(AQIStandards.getLevel(index))
-            self.selectedBackgroundView = selectedBackgroundView
+        if selected {
+            DispatchQueue.main.async {
+                self.mainCollectoinView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .left, animated: true)
+            }
         }
     }
 }
@@ -59,6 +65,10 @@ extension FDIconSelectCell: UICollectionViewDataSource {
         } else {
             return UICollectionViewCell()
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.didSelectItemAt(cellIndexPath)
     }
 }
 

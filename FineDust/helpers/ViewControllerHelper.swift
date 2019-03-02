@@ -20,12 +20,12 @@ class ViewControllerHelper {
         return FDNavigationController(rootViewController: vc)
     }
     
-    static func openSideMenu(vc: UIViewController) {
+    static func openSideMenu(vc: FDViewController) {
         let nav = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FDMenuNavigationViewController")
         vc.present(nav, animated: true, completion: nil)
     }
     
-    static func openAddArea(vc: UIViewController) {
+    static func openAddArea(vc: FDViewController) {
         let modal = FDAddAreaViewController()
         modal.modalTransitionStyle = .coverVertical
         modal.modalPresentationStyle = .overFullScreen
@@ -35,7 +35,7 @@ class ViewControllerHelper {
         }
     }
     
-    static func openEditArea(vc: UIViewController) {
+    static func openEditArea(vc: FDViewController) {
         let modal = FDEditAreaViewController()
         modal.modalTransitionStyle = .coverVertical
         modal.modalPresentationStyle = .overFullScreen

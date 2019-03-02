@@ -10,21 +10,43 @@ import UIKit
 
 class IconHelper {
     
+    static let UserDefaultKeyName = "UserDefautIconNumber"
+    private static var unknown = UIImage(named: "fail")!
+    
     static let iconArrays: [[UIImage]] = [
         defaultImages,
+        Basic.girlImages,
     ]
     
-    private static var unknown = UIImage(named: "fail")!
-
     private static var defaultImages: [UIImage] {
-        return [
-            unknown,
-            UIImage(named: "default1")!.withRenderingMode(.alwaysTemplate),
-            UIImage(named: "default2")!.withRenderingMode(.alwaysTemplate),
-            UIImage(named: "default3")!.withRenderingMode(.alwaysTemplate),
-            UIImage(named: "default4")!.withRenderingMode(.alwaysTemplate),
-            UIImage(named: "default5")!.withRenderingMode(.alwaysTemplate),
-            UIImage(named: "default6")!.withRenderingMode(.alwaysTemplate),
-        ]
+        return getImageArray("default")
     }
+    
+    class Basic {
+        
+        static var girlImages: [UIImage] {
+            return getImageArray("girl")
+        }
+    }
+    
+    static func getImageArray(_ imageName: String) -> [UIImage] {
+        var array = [UIImage](arrayLiteral: unknown)
+        for i in 1...6 {
+            array.append(UIImage(named: "\(imageName)\(String(i))")!.withRenderingMode(.alwaysTemplate))
+        }
+        return array
+    }
+}
+
+extension IconHelper {
+    
+    static func saveUserDefaultIconOrder(_ value: Int) {
+        UserDefaults.standard.set(value, forKey: IconHelper.UserDefaultKeyName)
+        UserDefaults.standard.synchronize()
+    }
+    
+    static func loadUserDefaultIconOrder() -> Int {
+        return UserDefaults.standard.integer(forKey: IconHelper.UserDefaultKeyName)
+    }
+    
 }

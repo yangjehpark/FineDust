@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol FDCurrentStateCellDelegate {
+    func stateIconImageViewTouched()
+}
+
 class FDCurrentStateCell: FDCurrentTableCell {
 
     static let defaultHeight: CGFloat = UITableViewAutomaticDimension
@@ -18,6 +22,8 @@ class FDCurrentStateCell: FDCurrentTableCell {
     @IBOutlet weak var stateAdviceLabel: UILabel?
     @IBOutlet weak var stateIndexLabel: UILabel?
     @IBOutlet weak var timeLabel: UILabel?
+    
+    var delegate: FDCurrentStateCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,7 +36,6 @@ class FDCurrentStateCell: FDCurrentTableCell {
         super.setup(data: data)
         locationLabel?.text = data?.localizedAddressName ?? data?.pointName
         let level = AQIStandards.getLevel(data?.mainIndex)
-        //stateEmojiLabel?.text = AQIStandards.Level.emoji(level)
         stateIconImageView?.image = AQIStandards.Level.icon(level)
         stateDescriptionLabel?.text = AQIStandards.getLevelTitle(level)
         stateAdviceLabel?.text = AQIStandards.getHealthImplications(level)
@@ -39,13 +44,6 @@ class FDCurrentStateCell: FDCurrentTableCell {
     }
     
     @objc func stateIconImageViewTouched() {
-        let vc = ViewControllerHelper.topViewController()
-        let modal = FDIconSelectViewController()
-        modal.modalTransitionStyle = .coverVertical
-        modal.modalPresentationStyle = .overFullScreen
-        modal.superVC = vc
-        vc?.present(modal, animated: true) {
-            
-        }
+        delegate?.stateIconImageViewTouched()
     }
 }

@@ -28,6 +28,8 @@ class FDCurrentViewController: FDViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        topNavigationItem?.title = "now".localized
+        
         mainTableView.dataSource = self
         mainTableView.delegate = self
         let headerTypes = [FDCurrentStandardColorHeader.self, FDCurrentOtherStateHeader.self, FDCurrentInfomationHeader.self]
@@ -40,10 +42,15 @@ class FDCurrentViewController: FDViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        topNavigationItem?.title = "now".localized
         mainTableView.backgroundColor = AQIStandards.getLevelBackgroundColor(AQIStandards.getLevel(data?.mainIndex))
+        mainTableView.reloadData()
     }
     
+    override func modalWillDisappear() {
+        super.modalWillDisappear()
+        mainTableView.reloadData()
+    }
+        
     enum Section: Int {
         case CurrentState = 0
         case CurrentOtherState = 1
@@ -100,6 +107,7 @@ extension FDCurrentViewController: UITableViewDelegate, UITableViewDataSource {
         case Section.CurrentState.rawValue:
             if let cell = tableView.fdDequeueCell(FDCurrentStateCell.self, indexPath) {
                 cell.setup(data: data)
+                cell.delegate = self
                 return cell
             }
         case Section.CurrentOtherState.rawValue:
@@ -173,5 +181,16 @@ extension FDCurrentViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 20
+    }
+}
+
+extension FDCurrentViewController: FDCurrentStateCellDelegate {
+    
+    func stateIconImageViewTouched() {
+        let modal = FDIconSelectViewController()
+        modal.modalTransitionStyle = .coverVertical
+        modal.modalPresentationStyle = .overFullScreen
+        modal.superVC = self
+        present(modal, animated: true, completion: nil)
     }
 }

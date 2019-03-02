@@ -13,11 +13,12 @@ class FDSelectTableViewController: FDViewController {
     @IBOutlet weak var editTableView: UITableView!
     @IBOutlet weak var closeBarButtonItem: UIBarButtonItem!
     
-    weak var superVC: UIViewController?
+    weak var superVC: FDViewController?
     
     @IBAction func doneButtonPressed() {
+        superVC?.modalWillDisappear()
         dismiss(animated: true) {
-            
+            self.superVC?.modalDidDisappear()
         }
     }
     

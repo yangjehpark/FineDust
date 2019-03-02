@@ -27,7 +27,7 @@ class FDIconSelectViewController: FDSelectTableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        editTableView.selectRow(at: IndexPath(row: 0, section: 0), animated: false, scrollPosition: .middle)
+        editTableView.selectRow(at: IndexPath(row: IconHelper.loadUserDefaultIconOrder(), section: 0), animated: false, scrollPosition: .middle)
     }
 }
 
@@ -39,7 +39,9 @@ extension FDIconSelectViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.fdDequeueCell(FDIconSelectCell.self, indexPath), let icons = IconHelper.iconArrays[safe: indexPath.row] {
-            cell.setup(icons: icons)
+            cell.delegate = self
+            cell.icons = icons
+            cell.cellIndexPath = indexPath
             return cell
         } else {
             return UITableViewCell()
@@ -52,9 +54,13 @@ extension FDIconSelectViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return FDIconSelectCell.defaultHeight
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        log("didSelectRowAt=\(indexPath)")
-    }
 }
 
+extension FDIconSelectViewController: FDIconSelectCellDelegate {
+    
+    func didSelectItemAt(_ indexPath: IndexPath?) {
+        guard let indexPath = indexPath else { return }
+        editTableView.selectRow(at: indexPath, animated: false, scrollPosition: UITableViewScrollPosition.middle)
+        IconHelper.saveUserDefaultIconOrder(indexPath.item)
+    }
+}

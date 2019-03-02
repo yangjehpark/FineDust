@@ -10,4 +10,11 @@ import UIKit
 
 class FDViewController: UIViewController {
     
+    func modalWillDisappear() {
+    
+    }
+    
+    func modalDidDisappear() {
+        
+    }
 }
