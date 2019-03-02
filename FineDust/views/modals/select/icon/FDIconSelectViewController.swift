@@ -34,13 +34,13 @@ class FDIconSelectViewController: FDSelectTableViewController {
 extension FDIconSelectViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return IconHelper.iconArrays.count
+        return IconHelper.iconArraysCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.fdDequeueCell(FDIconSelectCell.self, indexPath), let icons = IconHelper.iconArrays[safe: indexPath.row] {
+        if let cell = tableView.fdDequeueCell(FDIconSelectCell.self, indexPath) {
             cell.delegate = self
-            cell.icons = icons
+            cell.icons = IconHelper.iconArrays(indexPath.row)
             cell.cellIndexPath = indexPath
             return cell
         } else {

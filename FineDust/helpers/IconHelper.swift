@@ -10,22 +10,33 @@ import UIKit
 
 class IconHelper {
     
-    static let UserDefaultKeyName = "UserDefautIconNumber"
-    static let defaultInset = UIEdgeInsets(top: -10, left: -10, bottom: -10, right: -10)
-    
-    private static var unknown = UIImage(named: "fail")!
-    
-    static let iconArrays: [[UIImage]] = [
+    // privates
+    private static let iconArrays = [
         defaultImages,
         Basic.girlImages,
         Basic.boyImages,
-        Basic.robotImages,
-        Basic.botImages,
-    ]
-    
+        Basic.huskyImages,
+        Basic.catImages,
+        ]
     private static var defaultImages: [UIImage] {
         // https://www.iconfinder.com/iconsets/for-interface
         return getImageArray("default")
+    }
+    private static var unknown = UIImage(named: "fail")!
+    
+    // publics
+    static let UserDefaultKeyName = "UserDefautIconNumber"
+    static let defaultInset = UIEdgeInsets(top: -10, left: -10, bottom: -10, right: -10)
+    static var iconArraysCount: Int {
+        return iconArrays.count
+    }
+    static func iconArrays(_ index: Int) -> [UIImage] {
+        if let result = iconArrays[safe: index] {
+            return result
+        } else {
+            saveUserDefaultIconOrder(0)
+            return iconArrays[0]
+        }
     }
     
     class Basic {
@@ -40,14 +51,14 @@ class IconHelper {
             return getImageArray("boy")
         }
         
-        static var robotImages: [UIImage] {
-            // https://www.iconfinder.com/iconsets/cute-line-robot
-            return getImageArray("robot")
+        static var huskyImages: [UIImage] {
+            // https://www.iconfinder.com/iconsets/siberian-husky-emoticons-1
+            return getImageArray("husky")
         }
         
-        static var botImages: [UIImage] {
-            // https://www.iconfinder.com/iconsets/chat-bot-emoji-linear-outline
-            return getImageArray("bot")
+        static var catImages: [UIImage] {
+            // https://www.iconfinder.com/icons/2915293/cat_emoji_emotion_expression_face_feeling_smile_icon
+            return getImageArray("cat")
         }
     }
     
@@ -73,5 +84,4 @@ extension IconHelper {
     static func loadUserDefaultIconOrder() -> Int {
         return UserDefaults.standard.integer(forKey: IconHelper.UserDefaultKeyName)
     }
-    
 }

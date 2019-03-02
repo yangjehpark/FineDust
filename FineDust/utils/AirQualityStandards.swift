@@ -31,7 +31,7 @@ class AQIStandards {
         }
         
         static func icon(_ level: Level) -> UIImage {
-            return IconHelper.iconArrays[IconHelper.loadUserDefaultIconOrder()][level.rawValue]
+            return IconHelper.iconArrays(IconHelper.loadUserDefaultIconOrder())[level.rawValue]
         }
     }
     
