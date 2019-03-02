@@ -15,7 +15,7 @@ class FDIconSelectViewController: FDSelectTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationBar.topItem?.title = "icons".localized
+        navigationBar.topItem?.title = "ChangeIcons".localized
         
         editTableView.delegate = self
         editTableView.dataSource = self
