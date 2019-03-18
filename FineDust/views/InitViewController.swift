@@ -12,15 +12,26 @@ import NVActivityIndicatorView
 
 class InitViewController: UIViewController {
     
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var indicatorBackgroundView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        do {
-            let indicatorView = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 60, height: 60), type: NVActivityIndicatorType.ballClipRotateMultiple, color: .red, padding: nil)
-            view.addSubview(indicatorView)
-            indicatorView.center = view.center
-            indicatorView.startAnimating()
-        }
+        /*
+         https://www.iconfinder.com/icons/4162982/dust_man_mask_icon
+         https://www.iconfinder.com/icons/4162984/dust_head_mask_icon
+         https://www.iconfinder.com/icons/4169782/air_dust_mask_n95_pm2.5_pollution_icon
+         https://www.iconfinder.com/icons/4162973/dead_dirt_dust_icon
+         https://www.iconfinder.com/icons/4162978/dirt_dust_wind_icon
+         https://www.iconfinder.com/icons/4163946/breathe_dirt_dust_pollution_icon
+         */
+        imageView.image = UIImage(named: "bg01")
+        
+        let indicatorView = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 60, height: 60), type: .ballScaleRippleMultiple, color: .gray, padding: nil)
+        view.addSubview(indicatorView)
+        indicatorView.center = indicatorBackgroundView.center
+        indicatorView.startAnimating()
     }
     
     override func viewWillAppear(_ animated: Bool) {
