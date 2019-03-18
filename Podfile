@@ -14,7 +14,8 @@ target 'FineDust' do
     pod 'PagingView', '= 0.5.1'
     pod 'BWWalkthrough', '= 2.1.2'
     pod 'CryptoSwift', '= 0.13.1'
-    pod 'GIFGenerator'
+    pod 'GIFGenerator', '= 0.3.0'
+    pod 'UICountingLabel', '= 1.4.1'
 
 end
 

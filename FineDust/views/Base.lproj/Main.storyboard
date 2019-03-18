@@ -17,9 +17,37 @@
                     <view key="view" contentMode="scaleToFill" id="E5E-Jy-88N">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ON2-t6-CmQ">
+                                <rect key="frame" x="20" y="80" width="335" height="335"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ON2-t6-CmQ" secondAttribute="height" multiplier="1:1" id="AqC-12-E2I"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XwY-xf-FMK">
+                                <rect key="frame" x="157.5" y="435" width="60" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="HfE-Qm-TDn"/>
+                                    <constraint firstAttribute="width" constant="60" id="w8I-nq-nFC"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="XwY-xf-FMK" firstAttribute="top" secondItem="ON2-t6-CmQ" secondAttribute="bottom" constant="20" id="ARM-3l-IPk"/>
+                            <constraint firstItem="XwY-xf-FMK" firstAttribute="centerX" secondItem="E5E-Jy-88N" secondAttribute="centerX" id="DbY-qE-N0F"/>
+                            <constraint firstItem="ON2-t6-CmQ" firstAttribute="centerX" secondItem="E5E-Jy-88N" secondAttribute="centerX" id="Nwo-i0-r0k"/>
+                            <constraint firstItem="ON2-t6-CmQ" firstAttribute="top" secondItem="z2k-Jy-kbB" secondAttribute="top" constant="60" id="UpG-4Y-hm5"/>
+                            <constraint firstItem="z2k-Jy-kbB" firstAttribute="trailing" secondItem="ON2-t6-CmQ" secondAttribute="trailing" constant="20" id="bxi-uk-8lg"/>
+                            <constraint firstItem="ON2-t6-CmQ" firstAttribute="leading" secondItem="z2k-Jy-kbB" secondAttribute="leading" constant="20" id="kkA-lN-VPE"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="z2k-Jy-kbB"/>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="ON2-t6-CmQ" id="3Vy-pq-DjH"/>
+                        <outlet property="indicatorBackgroundView" destination="XwY-xf-FMK" id="Ybk-Py-Gcr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qH2-gz-RMB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -100,7 +128,7 @@
                                         <rect key="frame" x="0.0" y="-44" width="375" height="578"/>
                                         <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <wkWebViewConfiguration key="configuration" allowsAirPlayForMediaPlayback="NO">
-                                            <dataDetectorTypes key="dataDetectorTypes"/>
+                                            <dataDetectorTypes key="dataDetectorTypes" none="YES"/>
                                             <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                             <wkPreferences key="preferences"/>
                                         </wkWebViewConfiguration>

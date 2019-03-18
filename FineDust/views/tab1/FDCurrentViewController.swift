@@ -32,7 +32,7 @@ class FDCurrentViewController: FDViewController {
         
         mainTableView.dataSource = self
         mainTableView.delegate = self
-        let headerTypes = [FDCurrentStandardColorHeader.self, FDCurrentOtherStateHeader.self, FDCurrentInfomationHeader.self]
+        let headerTypes = [FDCurrentOtherStateHeader.self, FDCurrentInfomationHeader.self]
         let cellTypes = [FDCurrentStateCell.self, FDCurrentOtherStateCell.self, FDCurrentInfomationCell.self]
         mainTableView.fdRegisterHeaderFooterViews(headerTypes)
         mainTableView.fdRegisterCells(cellTypes)
@@ -52,9 +52,7 @@ class FDCurrentViewController: FDViewController {
     }
         
     enum Section: Int {
-        case CurrentState = 0
-        case CurrentOtherState = 1
-        case CurrentInfomation = 2
+        case CurrentState, CurrentOtherState, CurrentInfomation
         static func totalCount() -> Int {
             return 3
         }
@@ -142,10 +140,6 @@ extension FDCurrentViewController: UITableViewDelegate, UITableViewDataSource {
     // Header
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         switch section {
-        case Section.CurrentState.rawValue:
-            let header = tableView.fdDequeueHeaderFooterView(FDCurrentStandardColorHeader.self)
-            header?.setup(data: data)
-            return header
         case Section.CurrentOtherState.rawValue:
             let header = tableView.fdDequeueHeaderFooterView(FDCurrentOtherStateHeader.self)
             header?.setup(data: data)
@@ -161,8 +155,6 @@ extension FDCurrentViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         switch section {
-        case Section.CurrentState.rawValue:
-            return FDCurrentStandardColorHeader.defaultHeight
         case Section.CurrentOtherState.rawValue:
             return FDCurrentOtherStateHeader.defaultHeight
         case Section.CurrentInfomation.rawValue:

@@ -14,6 +14,7 @@ PODS:
   - ObjectMapper (3.4.1)
   - PagingView (0.5.1)
   - SideMenu (3.1.5)
+  - UICountingLabel (1.4.1)
 
 DEPENDENCIES:
   - Alamofire (= 4.7.0)
@@ -27,6 +28,7 @@ DEPENDENCIES:
   - ObjectMapper (= 3.4.1)
   - PagingView (= 0.5.1)
   - SideMenu (= 3.1.5)
+  - UICountingLabel
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -41,6 +43,7 @@ SPEC REPOS:
     - ObjectMapper
     - PagingView
     - SideMenu
+    - UICountingLabel
 
 SPEC CHECKSUMS:
   Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
@@ -54,7 +57,8 @@ SPEC CHECKSUMS:
   ObjectMapper: 5311bd50ca732930959e7ca1a2de43ab823a5ced
   PagingView: ec5169226d2bf17284192f2e0a4c2598f03083fc
   SideMenu: 47dbf9e4d878062d8994aed43f6e4bf6c1fea30b
+  UICountingLabel: faf890b505d96312e324a86718f031fafffb0ccb
 
-PODFILE CHECKSUM: ede91bc2193e5965602a85602888505fc7df6a39
+PODFILE CHECKSUM: 07c0fa7bd789c0e46770314e60c8ae635cf26d8f
 
 COCOAPODS: 1.5.0
