@@ -52,7 +52,7 @@ class FDCurrentStateCell: FDCurrentTableCell {
         }
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(taped))
         tapRecognizer.numberOfTapsRequired = 1
-        addGestureRecognizer(tapRecognizer)
+        stateIndexView.addGestureRecognizer(tapRecognizer)
     }
     
     override func setup(data: FDData?) {

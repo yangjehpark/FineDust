@@ -79,27 +79,27 @@
                         <rect key="frame" x="0.0" y="405.5" width="375" height="12"/>
                         <subviews>
                             <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YPL-ia-hsk">
-                                <rect key="frame" x="0.0" y="0.0" width="62.5" height="12"/>
+                                <rect key="frame" x="0.0" y="0.0" width="53.5" height="12"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fzu-B5-4HD">
-                                <rect key="frame" x="62.5" y="0.0" width="62.5" height="12"/>
+                                <rect key="frame" x="53.5" y="0.0" width="53.5" height="12"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BNK-R2-gqp">
-                                <rect key="frame" x="125" y="0.0" width="62.5" height="12"/>
+                                <rect key="frame" x="107" y="0.0" width="53.5" height="12"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P8S-m0-9ex">
-                                <rect key="frame" x="187.5" y="0.0" width="62.5" height="12"/>
+                                <rect key="frame" x="160.5" y="0.0" width="54" height="12"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view tag="5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KAO-JX-vPz">
-                                <rect key="frame" x="250" y="0.0" width="62.5" height="12"/>
+                                <rect key="frame" x="214.5" y="0.0" width="107" height="12"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view tag="6" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vo7-4V-sKo">
-                                <rect key="frame" x="312.5" y="0.0" width="62.5" height="12"/>
+                                <rect key="frame" x="321.5" y="0.0" width="53.5" height="12"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -118,7 +118,7 @@
                             <constraint firstItem="P8S-m0-9ex" firstAttribute="leading" secondItem="BNK-R2-gqp" secondAttribute="trailing" id="L0o-ox-V0Z"/>
                             <constraint firstItem="Vo7-4V-sKo" firstAttribute="leading" secondItem="KAO-JX-vPz" secondAttribute="trailing" id="NWV-OD-DjP"/>
                             <constraint firstItem="KAO-JX-vPz" firstAttribute="bottom" secondItem="STf-KI-N5n" secondAttribute="bottom" id="QZm-Ia-bSy"/>
-                            <constraint firstItem="KAO-JX-vPz" firstAttribute="width" secondItem="YPL-ia-hsk" secondAttribute="width" id="R89-zg-kSg"/>
+                            <constraint firstItem="KAO-JX-vPz" firstAttribute="width" secondItem="YPL-ia-hsk" secondAttribute="width" multiplier="2" id="R89-zg-kSg"/>
                             <constraint firstItem="Fzu-B5-4HD" firstAttribute="top" secondItem="STf-KI-N5n" secondAttribute="top" id="YRf-0J-NDq"/>
                             <constraint firstItem="STf-KI-N5n" firstAttribute="trailing" secondItem="Vo7-4V-sKo" secondAttribute="trailing" id="YXH-7Z-HWO"/>
                             <constraint firstItem="Fzu-B5-4HD" firstAttribute="leading" secondItem="YPL-ia-hsk" secondAttribute="trailing" id="cpj-PH-IdK"/>
